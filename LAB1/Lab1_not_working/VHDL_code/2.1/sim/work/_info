@@ -1,0 +1,105 @@
+m255
+13
+cModel Technology
+d/home/isa07_2021_2022/Desktop/Lab1_group07_NOTO/Lab1/VHDL_code/2.1/sim
+T_opt
+VQXiJSM9G?fiaNJg_6f_ik1
+06 6 4 ./work tb_fir fast 0
+o-quiet -auto_acc_if_foreign -work work -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /tb_fir/UUT=../innovus/FIR_Filter.sdf -suppress 1948
+tExplicit 1
+OE;O;6.2g;35
+Pconstants
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1636713784
+8/home/isa07_2021_2022/Desktop/Lab1_group07_NOTO/Lab1/VHDL_code/2.1/components/constants.vhd
+F/home/isa07_2021_2022/Desktop/Lab1_group07_NOTO/Lab1/VHDL_code/2.1/components/constants.vhd
+l0
+L6
+VOHBkK0n^Wfz?2390a1g<31
+OE;C;6.2g;35
+32
+M3 ieee std_logic_1164
+M2 ieee std_logic_arith
+M1 ieee std_logic_unsigned
+o-work work
+tExplicit 1
+vFIR_Filter
+IRC80IdmU]_g6XK0E_lNme3
+V2XMPBg[0Nz;T`fBQ[251l3
+w1637069308
+8/home/isa07_2021_2022/Desktop/Lab1_group07_NOTO/Lab1/VHDL_code/2.1/innovus/FIR_Filter.v
+F/home/isa07_2021_2022/Desktop/Lab1_group07_NOTO/Lab1/VHDL_code/2.1/innovus/FIR_Filter.v
+L0 15
+V2XMPBg[0Nz;T`fBQ[251l3
+OE;L;6.2g;35
+r1
+31
+o-work work
+n@f@i@r_@filter
+vtb_fir
+IVDEQ;;265HneUEj<6@>og2
+Vn4ToFGQLaei@:>cm_n>5j1
+w1637025661
+8/home/isa07_2021_2022/Desktop/Lab1_group07_NOTO/Lab1/VHDL_code/2.1/tb/tb_verilog/tb_fir.v
+F/home/isa07_2021_2022/Desktop/Lab1_group07_NOTO/Lab1/VHDL_code/2.1/tb/tb_verilog/tb_fir.v
+L0 6
+Vn4ToFGQLaei@:>cm_n>5j1
+OE;L;6.2g;35
+r1
+31
+o-work work
+Etb_fir_all
+w1637057616
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP work constants OHBkK0n^Wfz?2390a1g<31
+DP std textio K]Z^fghZ6B=BjnK5NomDT3
+DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/isa07_2021_2022/Desktop/Lab1_group07_NOTO/Lab1/VHDL_code/2.1/tb/tb_verilog/tb_fir_all.vhd
+F/home/isa07_2021_2022/Desktop/Lab1_group07_NOTO/Lab1/VHDL_code/2.1/tb/tb_verilog/tb_fir_all.vhd
+l0
+L9
+V7SHY966L61WKa]mFQ335B1
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Abehavioural
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP work constants OHBkK0n^Wfz?2390a1g<31
+DP std textio K]Z^fghZ6B=BjnK5NomDT3
+DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work tb_fir_all 7SHY966L61WKa]mFQ335B1
+l49
+L29
+VZ<C^I?daYOjgdJmhQbPK<2
+OE;C;6.2g;35
+32
+M7 ieee std_logic_1164
+M6 ieee numeric_std
+M5 ieee std_logic_textio
+M4 std textio
+M3 work constants
+M2 ieee std_logic_arith
+M1 ieee std_logic_unsigned
+o-work work
+tExplicit 1
+vtb_fir_unfolded
+IQi`C<MjVj3^<kRPI2bMan0
+VWGHcEjbJEfd_356lRX6CE1
+w1637019136
+8/home/isa07_2021_2022/Desktop/Lab1_group07_NOTO/Lab1/VHDL_code/2.1/tb/tb_fir_unfolded.v
+F/home/isa07_2021_2022/Desktop/Lab1_group07_NOTO/Lab1/VHDL_code/2.1/tb/tb_fir_unfolded.v
+L0 7
+VWGHcEjbJEfd_356lRX6CE1
+OE;L;6.2g;35
+r1
+31
+o-work work
