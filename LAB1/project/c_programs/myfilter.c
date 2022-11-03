@@ -7,11 +7,8 @@
 #define SHAMT 16 /// shift amount
 
 const int bi[NT]={-13, -28, 104, 544, 830, 544, 104, -28, -13}; /// b array
-const int ai[NT-1]={0, 0}; /// a array
 
-/// Perform fixed point filtering assming direct form I
-///\param x is the new input sample
-///\return the new output sample
+////////////////////////////////////////////////////////////////////////
 int myfilter(int x)
 {
   static int sx[NT]; /// x shift register
@@ -26,8 +23,6 @@ int myfilter(int x)
     first_run = 1;
     for (i=0; i<NT; i++)
       sx[i] = 0;
-    for (i=0; i<NT-1; i++)
-      sy[i] = 0;
   }
 
   /// shift and insert new sample in x shift register
@@ -39,18 +34,11 @@ int myfilter(int x)
   /// Moving average part
   y = 0;
   for (i=0; i<NT; i++)
-    y += ((sx[i]*bi[i]) >> SHAMT) << (SHAMT-NB+1);    
-  /// Auto regressive part
-  //for (i=0; i<NT-1; i++)
-  //  y -= ((sy[i]*ai[i]) >> SHAMT) << (SHAMT-NB+1);    
-
-  /// update the y shift register
-  //for (i=NT-2; i>0; i--)
-  //  sy[i] = sy[i-1];
-  //sy[0] = y;
- 
+    y += ((sx[i]*bi[i]) >> SHAMT) << (SHAMT-NB);
+  
   return y;
 }
+////////////////////////////////////////////////////////////////////
 
 int main (int argc, char **argv)
 {
