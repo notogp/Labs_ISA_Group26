@@ -11,10 +11,10 @@ z2
 cModel Technology
 Z0 d/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/sim
 T_opt
-!s110 1667505723
-VlIUAIc5G9MXX7<FYHN1_]1
+!s110 1667515013
+V7zh<??APg;_[`kodQY4Qb2
 04 6 4 work tb_fir fast 0
-=2-52540097797c-63641e3b-4cb96-3dc8
+=4-52540097797c-63644284-8471c-6b20
 o-quiet -auto_acc_if_foreign -work work
 Z1 tCvgOpt 0
 n@_opt
@@ -159,11 +159,11 @@ R29
 R14
 R15
 Emyfir
-Z30 w1667505706
+Z30 w1667514987
 Z31 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 R5
 R6
-!i122 27
+!i122 31
 R0
 Z32 8/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/fir.vhd
 Z33 F/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/fir.vhd
@@ -173,9 +173,9 @@ VAAXI?4WT^ogH_W`_ko4Y12
 !s100 Yz]ghC^kVcFjGcndHGU>n2
 R9
 32
-Z34 !s110 1667505715
+Z34 !s110 1667514993
 !i10b 1
-Z35 !s108 1667505715.000000
+Z35 !s108 1667514992.000000
 Z36 !s90 -reportprogress|300|-work|work|/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/fir.vhd|
 Z37 !s107 /home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/fir.vhd|
 !i113 0
@@ -186,7 +186,7 @@ R31
 R5
 R6
 DEx4 work 5 myfir 0 22 AAXI?4WT^ogH_W`_ko4Y12
-!i122 27
+!i122 31
 l48
 L28 77
 VFGGLIY6JWd8OLCi8NFY4:2

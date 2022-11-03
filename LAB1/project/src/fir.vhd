@@ -88,7 +88,7 @@ reg_line(0) <= DIN;
 	adders_generate : for i in 1 to 7 generate
 		sum(i) <= resize(signed(mult(i)(2*NBIT - 1 downto 2*NBIT - 8)), 12) + sum(i - 1);
 	end generate; -- adders
---resize(signed(old_size_std_logic_vector), 12);
+
 ---------------------------------------------------------------------------------------
 
 --	output_register : reg 
