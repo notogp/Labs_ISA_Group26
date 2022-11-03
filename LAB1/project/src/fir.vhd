@@ -58,13 +58,13 @@ begin
 	bcoeff(8) <= B8(NBIT-1 downto 0);
 	
 ---------------------------------------------------------------------------------------		
-	input_register : reg 
-		port map( CLK => CLK, 
-				  RST_N => RST_N, 
-				  ENABLE => VIN,
-		          REG_IN => DIN,
-				  REG_OUT => reg_line(0));
-
+--	input_register : reg 
+--		port map( CLK => CLK, 
+--				  RST_N => RST_N, 
+--				  ENABLE => VIN,
+--		          REG_IN => DIN,
+--				  REG_OUT => reg_line(0));
+reg_line(0) <= DIN;
 ---------------------------------------------------------------------------------------
 
 	registers_generate : for i in 1 to 8 generate
@@ -84,20 +84,20 @@ begin
 
 ---------------------------------------------------------------------------------------
 	--resize((mult(0)(2*NBIT - 1 downto 2*NBIT - 8) + mult(1)(2*NBIT - 1 downto 2*NBIT - 8)), 12);
-	sum(0) <= mult(0)(2*NBIT - 1 downto 2*NBIT - 8) + mult(1)(2*NBIT - 1 downto 2*NBIT - 8) & "0000";
+	sum(0) <= resize(signed(mult(0)(2*NBIT - 1 downto 2*NBIT - 8)), 12) + resize(signed(mult(1)(2*NBIT - 1 downto 2*NBIT - 8)), 12);
 	adders_generate : for i in 1 to 7 generate
-		sum(i) <= mult(i)(2*NBIT - 1 downto 2*NBIT - 8) & "0000" + sum(i - 1);
+		sum(i) <= resize(signed(mult(i)(2*NBIT - 1 downto 2*NBIT - 8)), 12) + sum(i - 1);
 	end generate; -- adders
-
+--resize(signed(old_size_std_logic_vector), 12);
 ---------------------------------------------------------------------------------------
 
-	output_register : reg 
-		port map( CLK => CLK, 
-				  RST_N => RST_N, 
-				  ENABLE => VIN,
-				  REG_IN => sum(7), 
-				  REG_OUT => DOUT);
-	
+--	output_register : reg 
+--		port map( CLK => CLK, 
+--				  RST_N => RST_N, 
+--				  ENABLE => VIN,
+--				  REG_IN => sum(7), 
+--				  REG_OUT => DOUT);
+	DOUT <= sum(7);
 	VIN_s <= VIN;
 	VOUT <= VIN_s;
 

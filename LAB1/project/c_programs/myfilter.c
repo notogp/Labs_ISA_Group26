@@ -34,8 +34,9 @@ int myfilter(int x)
   /// Moving average part
   y = 0;
   for (i=0; i<NT; i++)
-    y += ((sx[i]*bi[i]) >> SHAMT) << (SHAMT-NB);
-  
+    y += ((sx[i]*bi[i]) >> SHAMT); // << (SHAMT - NB + 1); 
+  //with only a shift by 11 we obtain THD = -64.8433 and the results_c.txt are similar to the results_m.txt
+  //with a shift by 16 and then a shift back by 5 (total shift of 11) we obtain a THD = -33.0825
   return y;
 }
 ////////////////////////////////////////////////////////////////////
