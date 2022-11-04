@@ -35,70 +35,123 @@ architecture behavioural of myfir is
 			  REG_OUT : out signed(NBIT-1 downto 0));
 	end component;
 
-	type registers_array is array (8 downto 0) of signed(NBIT-1 downto 0); -- Array for the delay line
+	type registers_array is array (7 downto 0) of signed(NBIT-1 downto 0); -- Array for the delay line
 	type bcoeff_array is array (8 downto 0) of signed(NBIT-1 downto 0);     -- Array for the coefficients
 	type mult_array is array (8 downto 0) of signed(2*NBIT-1 downto 0);    -- Array for the results of multiplications
+	type mult_array_12 is array (8 downto 0) of signed(NBIT-1 downto 0);    -- Array for the results of multiplications
 	type sum_array is array (7 downto 0) of signed(NBIT-1 downto 0);            -- Array for the results of additions
 
 	signal bcoeff     : bcoeff_array;
 	signal reg_line   : registers_array;
 	signal mult       : mult_array;
+	signal mult_12    : mult_array_12;
 	signal sum        : sum_array;
 	signal VIN_s : std_logic;
+	signal reg_DIN : signed(NBIT-1 downto 0);
+	signal reg_DOUT : signed(NBIT-1 downto 0);
+	signal cnt : integer range 0 to 2;
+
+	constant tco : time := 10 ns;
+
 begin
 
-	bcoeff(0) <= B0(NBIT-1 downto 0);
-	bcoeff(1) <= B1(NBIT-1 downto 0);
-	bcoeff(2) <= B2(NBIT-1 downto 0);
-	bcoeff(3) <= B3(NBIT-1 downto 0);
-	bcoeff(4) <= B4(NBIT-1 downto 0);
-	bcoeff(5) <= B5(NBIT-1 downto 0);
-	bcoeff(6) <= B6(NBIT-1 downto 0);
-	bcoeff(7) <= B7(NBIT-1 downto 0);
-	bcoeff(8) <= B8(NBIT-1 downto 0);
+	bcoeff(0) <= B0;
+	bcoeff(1) <= B1;
+	bcoeff(2) <= B2;
+	bcoeff(3) <= B3;
+	bcoeff(4) <= B4;
+	bcoeff(5) <= B5;
+	bcoeff(6) <= B6;
+	bcoeff(7) <= B7;
+	bcoeff(8) <= B8;
 	
 ---------------------------------------------------------------------------------------		
---	input_register : reg 
---		port map( CLK => CLK, 
---				  RST_N => RST_N, 
---				  ENABLE => VIN,
---		          REG_IN => DIN,
---				  REG_OUT => reg_line(0));
-reg_line(0) <= DIN;
+	input_register : reg 
+		port map( CLK => CLK, 
+				  RST_N => RST_N, 
+				  ENABLE => VIN,
+		          REG_IN => DIN,
+				  REG_OUT => reg_DIN);
 ---------------------------------------------------------------------------------------
 
-	registers_generate : for i in 1 to 8 generate
+	registers_generate : for i in 0 to 7 generate
+		first_reg_generate : if i=0 generate	
+			input_register : reg 
+			port map( CLK => CLK, 
+					  RST_N => RST_N, 
+					  ENABLE => VIN,
+			          REG_IN => reg_DIN,
+					  REG_OUT => reg_line(i));
+		end generate first_reg_generate; 
+
+		regs_generate : if i>0 generate
 			register_line : reg 
 			port map( CLK => CLK, 
 					  RST_N => RST_N, 
 					  ENABLE => VIN,
 				      REG_IN => reg_line(i - 1), 
 			          REG_OUT => reg_line(i));
-	end generate; 
+		end generate regs_generate;
+	end generate registers_generate; 
 
 ---------------------------------------------------------------------------------------
 
 	multipliers_generate : for i in 0 to 8 generate
-		mult(i) <= bcoeff(i) * reg_line(i);
-	end generate; -- multipliers with correction
+		
+		first_mult_generate : if i=0 generate	
+			mult(i) <= bcoeff(i) * reg_DIN;
+		end generate first_mult_generate;
+
+		mults_generate : if i>0 generate
+			mult(i) <= bcoeff(i) * reg_line(i - 1);
+		end generate mults_generate; -- multipliers with correction
+	
+	end generate multipliers_generate;
+---------------------------------------------------------------------------------------
+	multipliers12_generate : for i in 0 to 8 generate
+		mult_12(i) <= ((mult(i)(2*NBIT - 1 downto 2*NBIT - 8)) & "0000");
+	end generate;
+	
+	
+	adders_generate : for i in 0 to 7 generate
+		
+		first_add_generate : if i=0 generate	
+			sum(i) <= mult_12(i) + mult_12(i + 1);
+    	end generate first_add_generate;
+
+		adds_generate : if i>0 and i<7 generate 
+			sum(i) <= sum(i-1) + mult_12(i + 1);
+    	end generate adds_generate;
+		
+		last_add_generate : if i=7 generate
+			reg_DOUT <= sum(i-1) + mult_12(i + 1);
+		end generate last_add_generate;
+	
+	end generate adders_generate; -- adders
 
 ---------------------------------------------------------------------------------------
-	--resize((mult(0)(2*NBIT - 1 downto 2*NBIT - 8) + mult(1)(2*NBIT - 1 downto 2*NBIT - 8)), 12);
-	sum(0) <= resize(signed(mult(0)(2*NBIT - 1 downto 2*NBIT - 8)), 12) + resize(signed(mult(1)(2*NBIT - 1 downto 2*NBIT - 8)), 12);
-	adders_generate : for i in 1 to 7 generate
-		sum(i) <= resize(signed(mult(i)(2*NBIT - 1 downto 2*NBIT - 8)), 12) + sum(i - 1);
-	end generate; -- adders
 
----------------------------------------------------------------------------------------
+	output_register : reg 
+		port map( CLK => CLK, 
+				  RST_N => RST_N, 
+				  ENABLE => VIN,
+				  REG_IN => reg_DOUT, 
+				  REG_OUT => DOUT);
 
---	output_register : reg 
---		port map( CLK => CLK, 
---				  RST_N => RST_N, 
---				  ENABLE => VIN,
---				  REG_IN => sum(7), 
---				  REG_OUT => DOUT);
-	DOUT <= sum(7);
 	VIN_s <= VIN;
-	VOUT <= VIN_s;
+
+	valid_proc : process(CLK) is 
+	variable cnt : integer := 0;
+	begin
+		if rising_edge(CLK) then
+			if (VIN_s = '1') or (cnt > 1) then
+				cnt := cnt + 1;
+				if (cnt > 1) then 
+					VOUT <= VIN_s;
+					cnt := 2;
+				end if; 
+			end if; 
+		end if;
+	end process valid_proc;
 
 end architecture;
