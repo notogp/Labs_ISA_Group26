@@ -1,8 +1,0 @@
-H 2141964 11 3 0 2 2 0 0 0 0
-L 4 ieee 19 $MODEL_TECH/../ieee
-L 3 std 18 $MODEL_TECH/../std
-L 4 work 6 ./work
-D 16 ./work.constants OHBkK0n^Wfz?2390a1g<31 0 1
-D 30 ./work.tb_fir_all(behavioural) EjeWAS_B??MAdm6=@M`ZD0 1 1
-2 0  0 iS7ZOzdjU200HGh6O?];_2 0 0 1
-2 0  0 R^OA9IJGDHI3NQT`aKlCN2 1 1 1

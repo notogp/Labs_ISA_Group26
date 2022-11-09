@@ -143,7 +143,7 @@ begin
 	valid_proc : process(CLK) is 
 	variable cnt : integer := 0;
 	begin
-		if RST_N = '0' and rising_edge(CLK) then 
+		if RST_N = '0' then 
 			cnt := 0;
 		elsif rising_edge(CLK) then
 			if (VIN_s = '1') or (cnt > 1) then

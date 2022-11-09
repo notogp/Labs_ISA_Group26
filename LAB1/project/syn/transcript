@@ -1,0 +1,5 @@
+# do swa.tcl
+# Error in macro ./swa.tcl line 1
+# 
+#     while executing
+# "vcd file ../vcd/myfir_syn.vcd"

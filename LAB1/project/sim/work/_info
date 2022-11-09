@@ -11,241 +11,261 @@ z2
 cModel Technology
 Z0 d/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/sim
 T_opt
-!s110 1667591559
-VJio`X761dIhO5<@8G?YHd2
-04 6 4 work tb_fir fast 0
-=18-52540097797c-63656d86-9f391-114f
+!s110 1667995661
+VnPfXiXXJa];XDIPn_k;ob1
+Z1 04 6 4 work tb_fir fast 0
+=1-52540097797c-636b980c-cd95f-68b3
 o-quiet -auto_acc_if_foreign -work work
-Z1 tCvgOpt 0
+Z2 tCvgOpt 0
 n@_opt
-OL;O;2020.4;71
-Eclk_gen
-Z2 w1667324162
-Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
-Z4 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 8
+Z3 OL;O;2020.4;71
+T_opt1
+!s110 1667994989
+VE0?S`NbZLW]1]?<>GokB<3
+R1
+=1-52540097797c-636b956c-7a39b-40cc
+o-quiet -auto_acc_if_foreign -work work -L /eda/dk/nangate45/verilog/qsim2020.4
+R2
+n@_opt1
+R3
 R0
-Z7 8/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/clk_gen.vhd
-Z8 F/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/clk_gen.vhd
+T_opt2
+!s110 1667995153
+V^3n3=d=l`FoVJjgSkNLkE1
+R1
+=1-52540097797c-636b960f-5617a-6494
+o-quiet -auto_acc_if_foreign -work work -L /eda/dk/nangate45/verilog/qsim2020.4 -sdftyp /tb_fir/UUT=../netlist/myfir.sdf -suppress 1948
+R2
+n@_opt2
+R3
+R0
+Eclk_gen
+Z4 w1667324162
+Z5 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z6 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 148
+R0
+Z9 8/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/clk_gen.vhd
+Z10 F/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/clk_gen.vhd
 l0
 L6 1
 V3cAb>CoD90nEO15F^4k;e0
 !s100 JA8Ue1n4KCD]`nb]FQfQ[2
-Z9 OL;C;2020.4;71
+Z11 OL;C;2020.4;71
 32
-Z10 !s110 1667496767
+Z12 !s110 1667995622
 !i10b 1
-Z11 !s108 1667496767.000000
-Z12 !s90 -reportprogress|300|-work|work|/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/clk_gen.vhd|
-Z13 !s107 /home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/clk_gen.vhd|
+Z13 !s108 1667995622.000000
+Z14 !s90 -reportprogress|300|-work|work|/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/clk_gen.vhd|
+Z15 !s107 /home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/clk_gen.vhd|
 !i113 0
-Z14 o-work work
-Z15 tExplicit 1 CvgOpt 0
+Z16 o-work work
+Z17 tExplicit 1 CvgOpt 0
 Abeh
-R3
-R4
 R5
 R6
+R7
+R8
 DEx4 work 7 clk_gen 0 22 3cAb>CoD90nEO15F^4k;e0
-!i122 8
+!i122 148
 l19
 L13 25
 VGUz_BmBz2kCGX=FeG1WCf3
 !s100 7Z_M2BEFXb7=E2g1:CoB81
-R9
-32
-R10
-!i10b 1
 R11
+32
 R12
+!i10b 1
 R13
-!i113 0
 R14
 R15
+!i113 0
+R16
+R17
 Edata_maker
-Z16 w1667333616
-Z17 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
-R3
-R4
+Z18 w1667333616
+Z19 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
 R5
 R6
-!i122 9
+R7
+R8
+!i122 149
 R0
-Z18 8/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_maker_new.vhd
-Z19 F/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_maker_new.vhd
+Z20 8/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_maker_new.vhd
+Z21 F/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_maker_new.vhd
 l0
-Z20 L10 1
+Z22 L10 1
 VjBm?29_IAz9Rme@<nn_jo0
 !s100 ;bMaT:F85DjgCfzc7>hnH2
-R9
-32
-R10
-!i10b 1
 R11
-Z21 !s90 -reportprogress|300|-work|work|/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_maker_new.vhd|
-Z22 !s107 /home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_maker_new.vhd|
+32
+R12
+!i10b 1
+R13
+Z23 !s90 -reportprogress|300|-work|work|/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_maker_new.vhd|
+Z24 !s107 /home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_maker_new.vhd|
 !i113 0
-R14
-R15
-Abeh
+R16
 R17
-R3
-R4
+Abeh
+R19
 R5
 R6
+R7
+R8
 DEx4 work 10 data_maker 0 22 jBm?29_IAz9Rme@<nn_jo0
-!i122 9
+!i122 149
 l42
 L30 76
 VVf99FTf[M[a4450TDbQke2
 !s100 1kUoR7@H3o`bTLHzIc1DP2
-R9
-32
-R10
-!i10b 1
 R11
-R21
-R22
+32
+R12
+!i10b 1
+R13
+R23
+R24
 !i113 0
-R14
-R15
-Edata_sink
-Z23 w1667395474
+R16
 R17
-R3
-R4
+Edata_sink
+Z25 w1667395474
+R19
 R5
 R6
-!i122 10
+R7
+R8
+!i122 150
 R0
-Z24 8/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_sink.vhd
-Z25 F/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_sink.vhd
+Z26 8/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_sink.vhd
+Z27 F/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_sink.vhd
 l0
-R20
+R22
 VnJUhnh<HTen[f>8Rn02Ni1
 !s100 RWEhnV1KFQVRRP8T:FgRz1
-R9
+R11
 32
-Z26 !s110 1667496768
+Z28 !s110 1667995623
 !i10b 1
-Z27 !s108 1667496768.000000
-Z28 !s90 -reportprogress|300|-work|work|/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_sink.vhd|
-Z29 !s107 /home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_sink.vhd|
+Z29 !s108 1667995623.000000
+Z30 !s90 -reportprogress|300|-work|work|/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_sink.vhd|
+Z31 !s107 /home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/data_sink.vhd|
 !i113 0
-R14
-R15
-Abeh
+R16
 R17
-R3
-R4
+Abeh
+R19
 R5
 R6
+R7
+R8
 DEx4 work 9 data_sink 0 22 nJUhnh<HTen[f>8Rn02Ni1
-!i122 10
+!i122 150
 l22
 L20 32
 V;W>1BAf]ST?B@CEz6I=Gc2
 !s100 gM:kV@omb68l:QBzT6hiH1
-R9
+R11
 32
-R26
-!i10b 1
-R27
 R28
+!i10b 1
 R29
+R30
+R31
 !i113 0
-R14
-R15
+R16
+R17
 Emyfir
-Z30 w1667591525
-Z31 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
-R5
-R6
-!i122 97
+Z32 w1667923024
+Z33 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R7
+R8
+!i122 154
 R0
-Z32 8/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/fir.vhd
-Z33 F/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/fir.vhd
+Z34 8/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/fir.vhd
+Z35 F/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/fir.vhd
 l0
 L8 1
 VAAXI?4WT^ogH_W`_ko4Y12
 !s100 Yz]ghC^kVcFjGcndHGU>n2
-R9
+R11
 32
-Z34 !s110 1667591543
+Z36 !s110 1667995657
 !i10b 1
-Z35 !s108 1667591543.000000
-Z36 !s90 -reportprogress|300|-work|work|/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/fir.vhd|
-Z37 !s107 /home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/fir.vhd|
+Z37 !s108 1667995656.000000
+Z38 !s90 -reportprogress|300|-work|work|/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/fir.vhd|
+Z39 !s107 /home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/fir.vhd|
 !i113 0
-R14
-R15
+R16
+R17
 Abehavioural
-R31
-R5
-R6
+R33
+R7
+R8
 DEx4 work 5 myfir 0 22 AAXI?4WT^ogH_W`_ko4Y12
-!i122 97
+!i122 154
 l56
 L28 132
-VQ8;GbY[J=S`[cR0ojMo7d0
-!s100 oE8LHPH<[jU[AADECNW]Q1
-R9
+VZC<akB2m:NRb00Zk7Cl1n3
+!s100 OWa[g3:g;lQVCWKzgb]063
+R11
 32
-R34
-!i10b 1
-R35
 R36
+!i10b 1
 R37
+R38
+R39
 !i113 0
-R14
-R15
+R16
+R17
 Ereg
-Z38 w1667387627
-R31
-R5
-R6
-!i122 21
+Z40 w1667387627
+R33
+R7
+R8
+!i122 153
 R0
-Z39 8/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/register.vhd
-Z40 F/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/register.vhd
+Z41 8/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/register.vhd
+Z42 F/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/register.vhd
 l0
 L5 1
 VU<S_nXY3bHX>oX:3lh_N71
 !s100 HUj0N3U0JAE[Ch3@k`]UR3
-R9
+R11
 32
-Z41 !s110 1667504514
+Z43 !s110 1667995656
 !i10b 1
-Z42 !s108 1667504514.000000
-Z43 !s90 -reportprogress|300|-work|work|/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/register.vhd|
-Z44 !s107 /home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/register.vhd|
+R37
+Z44 !s90 -reportprogress|300|-work|work|/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/register.vhd|
+Z45 !s107 /home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/src/register.vhd|
 !i113 0
-R14
-R15
+R16
+R17
 Abehavioural
-R31
-R5
-R6
+R33
+R7
+R8
 DEx4 work 3 reg 0 22 U<S_nXY3bHX>oX:3lh_N71
-!i122 21
+!i122 153
 l16
 L14 17
 V6moE95O<V4GLL8n]3?6Xc2
 !s100 @YA6oN1`1`zF@=DSNa_PD3
-R9
+R11
 32
-R41
-!i10b 1
-R42
 R43
+!i10b 1
+R37
 R44
+R45
 !i113 0
-R14
-R15
+R16
+R17
 vtb_fir
-!s110 1667496769
+!s110 1667995624
 !i10b 1
 !s100 BFU3Kn:@KSeBM=M@?ide`2
 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -254,16 +274,16 @@ R0
 w1667325884
 8/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/tb_fir.v
 F/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/tb_fir.v
-!i122 11
+!i122 151
 L0 3 60
 VDg1SIo80bB@j0V0VzS_@n1
 OL;L;2020.4;71
 r1
 !s85 0
 31
-R27
+!s108 1667995624.000000
 !s107 /home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/tb_fir.v|
 !s90 -reportprogress|300|-work|work|/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/tb/tb_fir.v|
 !i113 0
 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
+R2
