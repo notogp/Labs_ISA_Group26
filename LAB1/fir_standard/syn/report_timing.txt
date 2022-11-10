@@ -1,0 +1,96 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : myfir
+Version: S-2021.06-SP4
+Date   : Tue Nov  8 17:43:01 2022
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: B5[1] (input port clocked by MY_CLK)
+  Endpoint: output_register/REG_OUT_reg[11]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  myfir              5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.50       0.50 f
+  B5[1] (in)                                              0.00       0.50 f
+  mult_106_G6/a[1] (myfir_DW_mult_tc_5)                   0.00       0.50 f
+  mult_106_G6/U539/Z (XOR2_X1)                            0.09       0.59 f
+  mult_106_G6/U331/ZN (INV_X1)                            0.09       0.68 r
+  mult_106_G6/U535/ZN (NAND2_X1)                          0.11       0.79 f
+  mult_106_G6/U387/ZN (OAI22_X1)                          0.08       0.87 r
+  mult_106_G6/U81/S (HA_X1)                               0.05       0.92 f
+  mult_106_G6/U532/ZN (AOI222_X1)                         0.11       1.03 r
+  mult_106_G6/U334/ZN (INV_X1)                            0.03       1.06 f
+  mult_106_G6/U531/ZN (AOI222_X1)                         0.09       1.15 r
+  mult_106_G6/U333/ZN (INV_X1)                            0.03       1.18 f
+  mult_106_G6/U530/ZN (AOI222_X1)                         0.09       1.27 r
+  mult_106_G6/U326/ZN (INV_X1)                            0.03       1.30 f
+  mult_106_G6/U529/ZN (AOI222_X1)                         0.09       1.39 r
+  mult_106_G6/U325/ZN (INV_X1)                            0.03       1.42 f
+  mult_106_G6/U528/ZN (AOI222_X1)                         0.09       1.51 r
+  mult_106_G6/U328/ZN (INV_X1)                            0.03       1.54 f
+  mult_106_G6/U527/ZN (AOI222_X1)                         0.09       1.63 r
+  mult_106_G6/U327/ZN (INV_X1)                            0.03       1.66 f
+  mult_106_G6/U526/ZN (AOI222_X1)                         0.09       1.75 r
+  mult_106_G6/U318/ZN (INV_X1)                            0.03       1.78 f
+  mult_106_G6/U525/ZN (AOI222_X1)                         0.09       1.87 r
+  mult_106_G6/U317/ZN (INV_X1)                            0.03       1.90 f
+  mult_106_G6/U524/ZN (AOI222_X1)                         0.09       1.99 r
+  mult_106_G6/U320/ZN (INV_X1)                            0.03       2.02 f
+  mult_106_G6/U523/ZN (AOI222_X1)                         0.09       2.11 r
+  mult_106_G6/U319/ZN (INV_X1)                            0.03       2.14 f
+  mult_106_G6/U522/ZN (AOI222_X1)                         0.09       2.23 r
+  mult_106_G6/U322/ZN (INV_X1)                            0.03       2.26 f
+  mult_106_G6/U521/ZN (AOI222_X1)                         0.09       2.35 r
+  mult_106_G6/U321/ZN (INV_X1)                            0.03       2.38 f
+  mult_106_G6/U520/ZN (AOI222_X1)                         0.09       2.48 r
+  mult_106_G6/U323/ZN (INV_X1)                            0.03       2.50 f
+  mult_106_G6/U10/CO (FA_X1)                              0.09       2.59 f
+  mult_106_G6/U9/CO (FA_X1)                               0.09       2.68 f
+  mult_106_G6/U8/CO (FA_X1)                               0.09       2.77 f
+  mult_106_G6/U7/CO (FA_X1)                               0.09       2.86 f
+  mult_106_G6/U6/CO (FA_X1)                               0.09       2.95 f
+  mult_106_G6/U5/CO (FA_X1)                               0.09       3.04 f
+  mult_106_G6/U4/S (FA_X1)                                0.14       3.18 r
+  mult_106_G6/product[22] (myfir_DW_mult_tc_5)            0.00       3.18 r
+  add_7_root_add_0_root_add_127_G8/U1_10/S (FA_X1)        0.12       3.30 f
+  add_2_root_add_0_root_add_127_G8/U1_10/S (FA_X1)        0.15       3.45 r
+  add_1_root_add_0_root_add_127_G8/U1_10/S (FA_X1)        0.12       3.57 f
+  add_0_root_add_0_root_add_127_G8/U1_10/CO (FA_X1)       0.10       3.68 f
+  add_0_root_add_0_root_add_127_G8/U1_11/S (FA_X1)        0.13       3.81 r
+  output_register/REG_IN[11] (reg_1)                      0.00       3.81 r
+  output_register/U5/ZN (NAND2_X1)                        0.03       3.84 f
+  output_register/U4/ZN (OAI21_X1)                        0.03       3.87 r
+  output_register/REG_OUT_reg[11]/D (DFFR_X1)             0.01       3.88 r
+  data arrival time                                                  3.88
+
+  clock MY_CLK (rise edge)                               10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.07       9.93
+  output_register/REG_OUT_reg[11]/CK (DFFR_X1)            0.00       9.93 r
+  library setup time                                     -0.04       9.89
+  data required time                                                 9.89
+  --------------------------------------------------------------------------
+  data required time                                                 9.89
+  data arrival time                                                 -3.88
+  --------------------------------------------------------------------------
+  slack (MET)                                                        6.02
+
+
+1

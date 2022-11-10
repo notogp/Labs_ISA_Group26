@@ -1,0 +1,56 @@
+m255
+K4
+z2
+!s11f vlog 2020.4 2020.10, Oct 13 2020
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/syn
+vmyfir
+Z1 !s110 1667994161
+!i10b 1
+!s100 j1gS:025EC?c6Ce5?5_eF0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I?=lZYn`ZPzQob1;3a;@m<0
+R0
+w1667994054
+8../netlist/myfir.v
+F../netlist/myfir.v
+!i122 0
+L0 8 6956
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OL;L;2020.4;71
+r1
+!s85 0
+31
+Z5 !s108 1667994161.000000
+!s107 ../netlist/myfir.v|
+!s90 -work|./work|../netlist/myfir.v|
+!i113 0
+Z6 o-work ./work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z7 tCvgOpt 0
+vtb_fir
+R1
+!i10b 1
+!s100 BFU3Kn:@KSeBM=M@?ide`2
+R2
+I_n[7NT85OaWF>lWiXWQ6i0
+R0
+w1667325884
+8../tb/tb_fir.v
+F../tb/tb_fir.v
+!i122 1
+L0 3 60
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 ../tb/tb_fir.v|
+!s90 -work|./work|../tb/tb_fir.v|
+!i113 0
+R6
+R7
