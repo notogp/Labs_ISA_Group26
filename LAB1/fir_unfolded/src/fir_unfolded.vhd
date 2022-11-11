@@ -49,7 +49,7 @@ architecture behavioural of myfir_unfolded is
 	signal reg_line   : registers_array;
 	signal mult_3k        : mult_array;
 	signal mult_3k1       : mult_array;
-	signal mult:3k2       : mult_array;
+	signal mult_3k2       : mult_array;
 	signal mult_12_3k     : mult_array_12;
 	signal mult_12_3k1    : mult_array_12;
 	signal mult_12_3k2    : mult_array_12;
@@ -148,58 +148,154 @@ reg3k2: reg
 
 ---------------------------------------------------------------------------------------
 --MULTIPLIERS 3K
-	multipliers_generate : for i in 0 to 8 generate
+	multipliers_generate3k : for i in 0 to 8 generate
 		
-		first_mult_generate : if i=0 generate	
+		first_mult_generate3k : if i=0 generate	
 			mult_3k(i) <= bcoeff(i) * reg_DIN_3k;
-		end generate first_mult_generate;
+		end generate first_mult_generate3k;
 
-		first_mult_generate : if i=1 generate	
+		second_mult_generate3k : if i=1 generate	
 			mult_3k(i) <= bcoeff(i) * reg_DIN_3k2_signal;
-		end generate first_mult_generate;
+		end generate second_mult_generate3k;
 
-		first_mult_generate : if i=2 generate	
+		third_mult_generate3k : if i=2 generate	
 			mult_3k(i) <= bcoeff(i) * reg_DIN_3k1_signal;
-		end generate first_mult_generate;
+		end generate third_mult_generate3k;
 
-		first_mult_generate : if i=3 generate	
+		fourth_mult_generate3k : if i=3 generate	
 			mult_3k(i) <= bcoeff(i) * reg_DIN_3k_signal;
-		end generate first_mult_generate;
+		end generate fourth_mult_generate3k;
 
-		mults_generate : if i>3 generate
+		mults_generate3k : if i>3 generate
 			mult_3k(i) <= bcoeff(i) * reg_line(i - 4);
-		end generate mults_generate; -- multipliers with correction
+		end generate mults_generate3k; -- multipliers with correction
 	
-	end generate multipliers_generate;
+	end generate multipliers_generate3k;
 
-	multipliers12_generate : for i in 0 to 8 generate
+	multipliers12_generate3k : for i in 0 to 8 generate
 		mult_12_3k(i) <= ((mult_3k(i)(2*NBIT - 1 downto 2*NBIT - 8)) & "0000");
-	end generate;
+	end generate multipliers12_generate3k;
 ---------------------------------------------------------------------------------------	
 -- ADDERS 3K	
-	adders_generate : for i in 0 to 7 generate
+	adders_generate3k : for i in 0 to 7 generate
 		
-		first_add_generate : if i=0 generate	
+		first_add_generate3k : if i=0 generate	
 			sum_3k(i) <= mult_12_3k(i) + mult_12_3k(i + 1);
-    	end generate first_add_generate;
+    	end generate first_add_generate3k;
 
-		adds_generate : if i>0 and i<7 generate 
+		adds_generate3k : if i>0 and i<7 generate 
 			sum_3k(i) <= sum_3k(i-1) + mult_12_3k(i + 1);
-    	end generate adds_generate;
+    	end generate adds_generate3k;
 		
-		last_add_generate : if i=7 generate
+		last_add_generate3k : if i=7 generate
 			reg_DOUT_3k <= sum_3k(i-1) + mult_12_3k(i + 1);
-		end generate last_add_generate;
+		end generate last_add_generate3k;
 	
-	end generate adders_generate; -- adders
+	end generate adders_generate3k; -- adders
 ---------------------------------------------------------------------------------------
 -- MULTIPLIERS 3K1
+multipliers_generate3k1 : for i in 0 to 8 generate
+		
+first_mult_generate3k1 : if i=0 generate	
+	mult_3k1(i) <= bcoeff(i) * reg_DIN_3k1;
+end generate first_mult_generate3k1;
+
+second_mult_generate3k1 : if i=1 generate	
+	mult_3k1(i) <= bcoeff(i) * reg_DIN_3k;
+end generate second_mult_generate3k1;
+
+third_mult_generate3k1 : if i=2 generate	
+	mult_3k1(i) <= bcoeff(i) * reg_DIN_3k2_signal;
+end generate third_mult_generate3k1;
+
+fourth_mult_generate3k1 : if i=3 generate	
+	mult_3k1(i) <= bcoeff(i) * reg_DIN_3k1_signal;
+end generate fourth_mult_generate3k1;
+
+fifth_mult_generate3k1 : if i=4 generate	
+	mult_3k1(i) <= bcoeff(i) * reg_DIN_3k_signal;
+end generate fifth_mult_generate3k1;
+
+mults_generate3k1 : if i>4 generate
+	mult_3k1(i) <= bcoeff(i) * reg_line(i - 5);
+end generate mults_generate3k1; -- multipliers with correction
+
+end generate multipliers_generate3k1;
+
+multipliers12_generate3k1 : for i in 0 to 8 generate
+	mult_12_3k1(i) <= ((mult_3k1(i)(2*NBIT - 1 downto 2*NBIT - 8)) & "0000");
+end generate multipliers12_generate3k1;
 ---------------------------------------------------------------------------------------
 -- ADDERS 3K1
+adders_generate3k1 : for i in 0 to 7 generate
+		
+first_add_generate3k1 : if i=0 generate	
+	sum_3k1(i) <= mult_12_3k1(i) + mult_12_3k1(i + 1);
+end generate first_add_generate3k1;
+
+adds_generate3k1 : if i>0 and i<7 generate 
+	sum_3k1(i) <= sum_3k1(i-1) + mult_12_3k1(i + 1);
+end generate adds_generate3k1;
+
+last_add_generate3k1 : if i=7 generate
+	reg_DOUT_3k1 <= sum_3k1(i-1) + mult_12_3k1(i + 1);
+end generate last_add_generate3k1;
+
+end generate adders_generate3k1; -- adders
 ---------------------------------------------------------------------------------------
 -- MULTIPLIERS 3K2
+multipliers_generate3k2 : for i in 0 to 8 generate
+		
+first_mult_generate3k2 : if i=0 generate	
+	mult_3k2(i) <= bcoeff(i) * reg_DIN_3k2;
+end generate first_mult_generate3k2;
+
+second_mult_generate3k2 : if i=1 generate	
+	mult_3k2(i) <= bcoeff(i) * reg_DIN_3k1;
+end generate second_mult_generate3k2;
+
+third_mult_generate3k2 : if i=2 generate	
+	mult_3k2(i) <= bcoeff(i) * reg_DIN_3k;
+end generate third_mult_generate3k2;
+
+fourth_mult_generate3k2 : if i=3 generate	
+	mult_3k2(i) <= bcoeff(i) * reg_DIN_3k2_signal;
+end generate fourth_mult_generate3k2;
+
+fifth_mult_generate3k2 : if i=4 generate	
+	mult_3k2(i) <= bcoeff(i) * reg_DIN_3k1_signal;
+end generate fifth_mult_generate3k2;
+
+sixth_mult_generate3k2 : if i=5 generate	
+	mult_3k2(i) <= bcoeff(i) * reg_DIN_3k_signal;
+end generate sixth_mult_generate3k2;
+
+mults_generate3k2 : if i>5 generate
+	mult_3k2(i) <= bcoeff(i) * reg_line(i - 6);
+end generate mults_generate3k2; -- multipliers with correction
+
+end generate multipliers_generate3k2;
+
+multipliers12_generate3k2 : for i in 0 to 8 generate
+	mult_12_3k2(i) <= ((mult_3k2(i)(2*NBIT - 1 downto 2*NBIT - 8)) & "0000");
+end generate multipliers12_generate3k2;
 ---------------------------------------------------------------------------------------
 -- ADDERS 3K2
+adders_generate3k2 : for i in 0 to 7 generate
+		
+first_add_generate3k2 : if i=0 generate	
+	sum_3k2(i) <= mult_12_3k2(i) + mult_12_3k2(i + 1);
+end generate first_add_generate3k2;
+
+adds_generate3k2 : if i>0 and i<7 generate 
+	sum_3k2(i) <= sum_3k2(i-1) + mult_12_3k2(i + 1);
+end generate adds_generate3k2;
+
+last_add_generate3k2 : if i=7 generate
+	reg_DOUT_3k2 <= sum_3k2(i-1) + mult_12_3k2(i + 1);
+end generate last_add_generate3k2;
+
+end generate adders_generate3k2; -- adders
 ---------------------------------------------------------------------------------------
 
 output_register3k : reg 
