@@ -46,7 +46,7 @@ Z5 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z6 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 10
+!i122 13
 Z9 d/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/fir_standard/sim
 Z10 8../tb/clk_gen.vhd
 Z11 F../tb/clk_gen.vhd
@@ -56,9 +56,9 @@ Vh6_zkAdHzibQ[7VPQ2ozi1
 !s100 JA8Ue1n4KCD]`nb]FQfQ[2
 Z12 OL;C;2020.4;71
 32
-Z13 !s110 1668197310
+Z13 !s110 1668257219
 !i10b 1
-Z14 !s108 1668197310.000000
+Z14 !s108 1668257218.000000
 Z15 !s90 -work|./work|../tb/clk_gen.vhd|../tb/data_maker_new.vhd|../tb/data_sink.vhd|
 Z16 !s107 ../tb/data_sink.vhd|../tb/data_maker_new.vhd|../tb/clk_gen.vhd|
 !i113 0
@@ -70,7 +70,7 @@ R6
 R7
 R8
 DEx4 work 7 clk_gen 0 22 h6_zkAdHzibQ[7VPQ2ozi1
-!i122 10
+!i122 13
 l19
 L13 25
 Ve74^IC;fzmJR569=`MKm51
@@ -92,7 +92,7 @@ R5
 R6
 R7
 R8
-!i122 10
+!i122 13
 R9
 Z21 8../tb/data_maker_new.vhd
 Z22 F../tb/data_maker_new.vhd
@@ -117,7 +117,7 @@ R6
 R7
 R8
 DEx4 work 10 data_maker 0 22 MWhLBR8V7DQ3=TUPz6KUm2
-!i122 10
+!i122 13
 l42
 L30 76
 VoVYC1<N@_bCY2006zg>1U3
@@ -139,7 +139,7 @@ R5
 R6
 R7
 R8
-!i122 10
+!i122 13
 R9
 Z25 8../tb/data_sink.vhd
 Z26 F../tb/data_sink.vhd
@@ -164,7 +164,7 @@ R6
 R7
 R8
 DEx4 work 9 data_sink 0 22 cb6jD6OB4a0bJb=VdPX3S0
-!i122 10
+!i122 13
 l22
 L20 32
 V4H48go7;NXNM7mR]?IJf81
@@ -184,7 +184,7 @@ Z27 w1668023157
 Z28 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 R7
 R8
-!i122 9
+!i122 12
 R9
 Z29 8../src/fir.vhd
 Z30 F../src/fir.vhd
@@ -194,11 +194,11 @@ VEJYbnUi=Xjblm<R10zAV31
 !s100 Yz]ghC^kVcFjGcndHGU>n2
 R12
 32
-R13
+Z31 !s110 1668257218
 !i10b 1
 R14
-Z31 !s90 -work|./work|../src/fir.vhd|../src/register.vhd|
-Z32 !s107 ../src/register.vhd|../src/fir.vhd|
+Z32 !s90 -work|./work|../src/fir.vhd|../src/register.vhd|
+Z33 !s107 ../src/register.vhd|../src/fir.vhd|
 !i113 0
 R17
 R18
@@ -207,41 +207,41 @@ R28
 R7
 R8
 DEx4 work 5 myfir 0 22 EJYbnUi=Xjblm<R10zAV31
-!i122 9
+!i122 12
 l56
 L28 132
 Vd2_kA0`?Lm1o<c?Q2;>c63
 !s100 OWa[g3:g;lQVCWKzgb]063
 R12
 32
-R13
+R31
 !i10b 1
 R14
-R31
 R32
+R33
 !i113 0
 R17
 R18
 Ereg
-Z33 w1667387627
+Z34 w1667387627
 R28
 R7
 R8
-!i122 9
+!i122 12
 R9
-Z34 8../src/register.vhd
-Z35 F../src/register.vhd
+Z35 8../src/register.vhd
+Z36 F../src/register.vhd
 l0
 L5 1
 V`X^`@88_6A<YLco>U[Io91
 !s100 HUj0N3U0JAE[Ch3@k`]UR3
 R12
 32
-R13
+R31
 !i10b 1
 R14
-R31
 R32
+R33
 !i113 0
 R17
 R18
@@ -250,18 +250,18 @@ R28
 R7
 R8
 DEx4 work 3 reg 0 22 `X^`@88_6A<YLco>U[Io91
-!i122 9
+!i122 12
 l16
 L14 17
 V6IeJemXe?:HE<g<E9gS3Y3
 !s100 @YA6oN1`1`zF@=DSNa_PD3
 R12
 32
-R13
+R31
 !i10b 1
 R14
-R31
 R32
+R33
 !i113 0
 R17
 R18
@@ -275,14 +275,14 @@ R9
 w1667325884
 8../tb/tb_fir.v
 F../tb/tb_fir.v
-!i122 11
+!i122 14
 L0 3 60
 VDg1SIo80bB@j0V0VzS_@n1
 OL;L;2020.4;71
 r1
 !s85 0
 31
-R14
+!s108 1668257219.000000
 !s107 ../tb/tb_fir.v|
 !s90 -work|./work|../tb/tb_fir.v|
 !i113 0

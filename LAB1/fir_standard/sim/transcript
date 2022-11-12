@@ -13,7 +13,7 @@
 # //  18 U.S.C. Section 1905.
 # //
 # vsim work.tb_fir -voptargs="+acc" -do "source sim.tcl" 
-# Start time: 21:08:40 on Nov 11,2022
+# Start time: 13:47:10 on Nov 12,2022
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
 # Loading work.tb_fir(fast)
 # Loading std.standard
@@ -29,5 +29,6 @@
 # Loading work.reg(behavioural)#1
 # Loading work.data_sink(beh)#1
 # source sim.tcl
-# End time: 21:32:20 on Nov 11,2022, Elapsed time: 0:23:40
+# Causality operation skipped due to absence of debug database file
+# End time: 14:13:56 on Nov 12,2022, Elapsed time: 0:26:46
 # Errors: 0, Warnings: 0

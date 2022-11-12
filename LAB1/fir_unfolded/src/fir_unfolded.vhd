@@ -60,9 +60,14 @@ architecture behavioural of myfir_unfolded is
 	signal reg_DIN_3k : signed(NBIT-1 downto 0);
 	signal reg_DIN_3k1 : signed(NBIT-1 downto 0);
 	signal reg_DIN_3k2 : signed(NBIT-1 downto 0);
-	signal reg_DIN_3k_signal : signed(NBIT-1 downto 0);
-	signal reg_DIN_3k1_signal : signed(NBIT-1 downto 0);
-	signal reg_DIN_3k2_signal : signed(NBIT-1 downto 0);
+	signal reg_DIN_3k_minus1 : signed(NBIT-1 downto 0);
+	signal reg_DIN_3k1_minus1 : signed(NBIT-1 downto 0);
+	signal reg_DIN_3k2_minus1 : signed(NBIT-1 downto 0);
+	signal reg_DIN_3k_minus2 : signed(NBIT-1 downto 0);
+	signal reg_DIN_3k1_minus2 : signed(NBIT-1 downto 0);
+	signal reg_DIN_3k2_minus2 : signed(NBIT-1 downto 0);
+	signal reg_DIN_3k1_minus3 : signed(NBIT-1 downto 0);
+	signal reg_DIN_3k2_minus3 : signed(NBIT-1 downto 0);
 	signal reg_DOUT_3k : signed(NBIT-1 downto 0);
 	signal reg_DOUT_3k1 : signed(NBIT-1 downto 0);
 	signal reg_DOUT_3k2 : signed(NBIT-1 downto 0);
@@ -83,6 +88,7 @@ begin
 	bcoeff(8) <= B8;
 	
 ---------------------------------------------------------------------------------------		
+-- INPUT REGISTERS
 input_register3k : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
@@ -104,73 +110,77 @@ input_register3k2 : reg
 	          REG_IN => DIN3k2,
 			  REG_OUT => reg_DIN_3k2);
 ---------------------------------------------------------------------------------------
-reg3k: reg 
+-- MINUS 1
+reg3k_minus1: reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
 			  ENABLE => VIN,
 	          REG_IN => reg_DIN_3k,
-			  REG_OUT => reg_DIN_3k_signal);
+			  REG_OUT => reg_DIN_3k_minus1);
 
-reg3k1: reg 
+reg3k1_minus1: reg 
 	port map( CLK => CLK, 
 			RST_N => RST_N, 
 			ENABLE => VIN,
 			REG_IN => reg_DIN_3k1,
-			REG_OUT => reg_DIN_3k1_signal);
+			REG_OUT => reg_DIN_3k1_minus1);
 
-reg3k2: reg 
+reg3k2_minus1: reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
 			  ENABLE => VIN,
 			  REG_IN => reg_DIN_3k2,
-			  REG_OUT => reg_DIN_3k2_signal);
+			  REG_OUT => reg_DIN_3k2_minus1);
 ---------------------------------------------------------------------------------------
--- REGISTERS
-	registers_generate : for i in 0 to 4 generate
-		first_reg_generate : if i=0 generate	
-			first_register : reg 
-			port map( CLK => CLK, 
-					  RST_N => RST_N, 
-					  ENABLE => VIN,
-			          REG_IN => reg_DIN_3k_signal,
-					  REG_OUT => reg_line(i));
-		end generate first_reg_generate; 
+-- MINUS 2
+reg3k_minus2: reg 
+	port map( CLK => CLK, 
+			  RST_N => RST_N, 
+			  ENABLE => VIN,
+	          REG_IN => reg_DIN_3k_minus1,
+			  REG_OUT => reg_DIN_3k_minus2);
 
-		regs_generate : if i>0 generate
-			register_line : reg 
-			port map( CLK => CLK, 
-					  RST_N => RST_N, 
-					  ENABLE => VIN,
-				      REG_IN => reg_line(i-1), 
-			          REG_OUT => reg_line(i));
-		end generate regs_generate;
-	end generate registers_generate; 
+reg3k1_minus2: reg 
+	port map( CLK => CLK, 
+			RST_N => RST_N, 
+			ENABLE => VIN,
+			REG_IN => reg_DIN_3k1_minus1,
+			REG_OUT => reg_DIN_3k1_minus2);
 
+reg3k2_minus2: reg 
+	port map( CLK => CLK, 
+			  RST_N => RST_N, 
+			  ENABLE => VIN,
+			  REG_IN => reg_DIN_3k2_minus1,
+			  REG_OUT => reg_DIN_3k2_minus2);
+---------------------------------------------------------------------------------------
+-- MINUS 3
+reg3k1_minus3: reg 
+	port map( CLK => CLK, 
+			RST_N => RST_N, 
+			ENABLE => VIN,
+			REG_IN => reg_DIN_3k1_minus2,
+			REG_OUT => reg_DIN_3k1_minus3);
+
+reg3k2_minus3: reg 
+	port map( CLK => CLK, 
+			  RST_N => RST_N, 
+			  ENABLE => VIN,
+			  REG_IN => reg_DIN_3k2_minus2,
+			  REG_OUT => reg_DIN_3k2_minus3);
 ---------------------------------------------------------------------------------------
 --MULTIPLIERS 3K
-	multipliers_generate3k : for i in 0 to 8 generate
 		
-		first_mult_generate3k : if i=0 generate	
-			mult_3k(i) <= bcoeff(i) * reg_DIN_3k;
-		end generate first_mult_generate3k;
+	mult_3k(0) <= bcoeff(0) * reg_DIN_3k;
+	mult_3k(1) <= bcoeff(1) * reg_DIN_3k2_minus1;
+	mult_3k(2) <= bcoeff(2) * reg_DIN_3k1_minus1;
+	mult_3k(3) <= bcoeff(3) * reg_DIN_3k_minus1;
+	mult_3k(4) <= bcoeff(4) * reg_DIN_3k2_minus2;
+	mult_3k(5) <= bcoeff(5) * reg_DIN_3k1_minus2;
+	mult_3k(6) <= bcoeff(6) * reg_DIN_3k_minus2;
+	mult_3k(7) <= bcoeff(7) * reg_DIN_3k2_minus3;
+	mult_3k(8) <= bcoeff(8) * reg_DIN_3k1_minus3;
 
-		second_mult_generate3k : if i=1 generate	
-			mult_3k(i) <= bcoeff(i) * reg_DIN_3k2_signal;
-		end generate second_mult_generate3k;
-
-		third_mult_generate3k : if i=2 generate	
-			mult_3k(i) <= bcoeff(i) * reg_DIN_3k1_signal;
-		end generate third_mult_generate3k;
-
-		fourth_mult_generate3k : if i=3 generate	
-			mult_3k(i) <= bcoeff(i) * reg_DIN_3k_signal;
-		end generate fourth_mult_generate3k;
-
-		mults_generate3k : if i>3 generate
-			mult_3k(i) <= bcoeff(i) * reg_line(i - 4);
-		end generate mults_generate3k; -- multipliers with correction
-	
-	end generate multipliers_generate3k;
 
 	multipliers12_generate3k : for i in 0 to 8 generate
 		mult_12_3k(i) <= ((mult_3k(i)(2*NBIT - 1 downto 2*NBIT - 8)) & "0000");
@@ -194,33 +204,16 @@ reg3k2: reg
 	end generate adders_generate3k; -- adders
 ---------------------------------------------------------------------------------------
 -- MULTIPLIERS 3K1
-multipliers_generate3k1 : for i in 0 to 8 generate
-		
-first_mult_generate3k1 : if i=0 generate	
-	mult_3k1(i) <= bcoeff(i) * reg_DIN_3k1;
-end generate first_mult_generate3k1;
-
-second_mult_generate3k1 : if i=1 generate	
-	mult_3k1(i) <= bcoeff(i) * reg_DIN_3k;
-end generate second_mult_generate3k1;
-
-third_mult_generate3k1 : if i=2 generate	
-	mult_3k1(i) <= bcoeff(i) * reg_DIN_3k2_signal;
-end generate third_mult_generate3k1;
-
-fourth_mult_generate3k1 : if i=3 generate	
-	mult_3k1(i) <= bcoeff(i) * reg_DIN_3k1_signal;
-end generate fourth_mult_generate3k1;
-
-fifth_mult_generate3k1 : if i=4 generate	
-	mult_3k1(i) <= bcoeff(i) * reg_DIN_3k_signal;
-end generate fifth_mult_generate3k1;
-
-mults_generate3k1 : if i>4 generate
-	mult_3k1(i) <= bcoeff(i) * reg_line(i - 5);
-end generate mults_generate3k1; -- multipliers with correction
-
-end generate multipliers_generate3k1;
+	
+	mult_3k1(0) <= bcoeff(0) * reg_DIN_3k1;
+	mult_3k1(1) <= bcoeff(1) * reg_DIN_3k;
+	mult_3k1(2) <= bcoeff(2) * reg_DIN_3k2_minus1;
+	mult_3k1(3) <= bcoeff(3) * reg_DIN_3k1_minus1;
+	mult_3k1(4) <= bcoeff(4) * reg_DIN_3k_minus1;
+	mult_3k1(5) <= bcoeff(5) * reg_DIN_3k2_minus2;
+	mult_3k1(6) <= bcoeff(6) * reg_DIN_3k1_minus2;
+	mult_3k1(7) <= bcoeff(7) * reg_DIN_3k_minus2;
+	mult_3k1(8) <= bcoeff(8) * reg_DIN_3k2_minus3;
 
 multipliers12_generate3k1 : for i in 0 to 8 generate
 	mult_12_3k1(i) <= ((mult_3k1(i)(2*NBIT - 1 downto 2*NBIT - 8)) & "0000");
@@ -244,37 +237,16 @@ end generate last_add_generate3k1;
 end generate adders_generate3k1; -- adders
 ---------------------------------------------------------------------------------------
 -- MULTIPLIERS 3K2
-multipliers_generate3k2 : for i in 0 to 8 generate
-		
-first_mult_generate3k2 : if i=0 generate	
-	mult_3k2(i) <= bcoeff(i) * reg_DIN_3k2;
-end generate first_mult_generate3k2;
-
-second_mult_generate3k2 : if i=1 generate	
-	mult_3k2(i) <= bcoeff(i) * reg_DIN_3k1;
-end generate second_mult_generate3k2;
-
-third_mult_generate3k2 : if i=2 generate	
-	mult_3k2(i) <= bcoeff(i) * reg_DIN_3k;
-end generate third_mult_generate3k2;
-
-fourth_mult_generate3k2 : if i=3 generate	
-	mult_3k2(i) <= bcoeff(i) * reg_DIN_3k2_signal;
-end generate fourth_mult_generate3k2;
-
-fifth_mult_generate3k2 : if i=4 generate	
-	mult_3k2(i) <= bcoeff(i) * reg_DIN_3k1_signal;
-end generate fifth_mult_generate3k2;
-
-sixth_mult_generate3k2 : if i=5 generate	
-	mult_3k2(i) <= bcoeff(i) * reg_DIN_3k_signal;
-end generate sixth_mult_generate3k2;
-
-mults_generate3k2 : if i>5 generate
-	mult_3k2(i) <= bcoeff(i) * reg_line(i - 6);
-end generate mults_generate3k2; -- multipliers with correction
-
-end generate multipliers_generate3k2;
+	
+	mult_3k2(0) <= bcoeff(0) * reg_DIN_3k2;
+	mult_3k2(1) <= bcoeff(1) * reg_DIN_3k1;
+	mult_3k2(2) <= bcoeff(2) * reg_DIN_3k;
+	mult_3k2(3) <= bcoeff(3) * reg_DIN_3k2_minus1;
+	mult_3k2(4) <= bcoeff(4) * reg_DIN_3k1_minus1;
+	mult_3k2(5) <= bcoeff(5) * reg_DIN_3k_minus1;
+	mult_3k2(6) <= bcoeff(6) * reg_DIN_3k2_minus2;
+	mult_3k2(7) <= bcoeff(7) * reg_DIN_3k1_minus2;
+	mult_3k2(8) <= bcoeff(8) * reg_DIN_3k_minus2;
 
 multipliers12_generate3k2 : for i in 0 to 8 generate
 	mult_12_3k2(i) <= ((mult_3k2(i)(2*NBIT - 1 downto 2*NBIT - 8)) & "0000");
