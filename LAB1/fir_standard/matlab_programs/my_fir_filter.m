@@ -38,22 +38,29 @@ plot(tt, y, 'c--o');
 legend('x1', 'x2', 'x', 'y')
 
 %% quantize input and output
-xq=floor(x*2^(nb-1));
-idx=find(xq==2^(nb-1));
-xq(idx)=2^(nb-1)-1;
+xq=floor(x*2^(nb-1)); %x values are quantized and stored in xq
+idx=find(xq==2^(nb-1)); % with find() we select the indexes where xq == 2^11
+xq(idx)=2^(nb-1)-1; % we store in xq the max value -1
 
 yq=floor(y*2^(nb-1));
 idy=find(yq==2^(nb-1));
 yq(idy)=2^(nb-1)-1;
 
-figure
-thd(yq)
+
 
 %% save input and output
 fp=fopen('samples.txt','w');
 fprintf(fp,'%d\n', xq);
 fclose(fp);
 
-fp=fopen('resultsm.txt', 'w');
+fp=fopen('results_m.txt', 'w');
 fprintf(fp, '%d\n', yq);
 fclose(fp);
+
+%% THD
+file_output = fopen('results_c.txt','r');
+formatSpec = '%d';
+zq = fscanf(file_output,formatSpec);
+fclose(file_output);
+figure
+thd(zq)
