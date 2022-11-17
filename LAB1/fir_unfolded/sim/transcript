@@ -1,5 +1,5 @@
 # vsim work.tb_filter -c -voptargs="+acc" -do "source sim.tcl" 
-# Start time: 23:30:53 on Nov 12,2022
+# Start time: 19:15:13 on Nov 17,2022
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  Questa Sim-64
 # //  Version 2020.4 linux_x86_64 Oct 13 2020
@@ -15,7 +15,9 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
+# ** Warning: License feature 'msimhdlsim' will expire in 13 days.
 # Loading work.tb_filter(fast)
+# ** Warning: License feature 'msimhdlmix' will expire in 13 days.
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -29,3 +31,5 @@
 # Loading work.reg(behavioural)#1
 # Loading work.data_sink(beh)#1
 # source sim.tcl
+# End time: 19:15:15 on Nov 17,2022, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0

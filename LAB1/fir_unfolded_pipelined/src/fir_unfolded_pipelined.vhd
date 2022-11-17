@@ -39,7 +39,15 @@ architecture behavioural of myfir_unfolded_pipelined is
 			  REG_OUT : out signed(NBIT-1 downto 0));
 	end component;
 
-	type registers_array is array (4 downto 0) of signed(NBIT-1 downto 0); -- Array for the delay line
+	component ff is
+		port ( CLK  	  : in std_logic;
+			   RST_N	  : in std_logic;
+			   ENABLE  : in std_logic;
+			   REG_IN  : in std_logic;
+			   REG_OUT : out std_logic);
+   end component;
+
+	type registers_array is array (5 downto 0) of std_logic; -- Array for the delay line
 	type bcoeff_array is array (8 downto 0) of signed(NBIT-1 downto 0);     -- Array for the coefficients
 	type mult_array is array (8 downto 0) of signed(2*NBIT-1 downto 0);    -- Array for the results of multiplications
 	type mult_array_12 is array (8 downto 0) of signed(NBIT-1 downto 0);    -- Array for the results of multiplications
@@ -449,42 +457,61 @@ end generate registers_generate_3k2_pipe4;
 output_register3k : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => reg_line(0),
 	          REG_IN => reg_DOUT_3k,
 			  REG_OUT => DOUT3k);
 
 output_register3k1 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => reg_line(0),
 			  REG_IN => reg_DOUT_3k1,
 			  REG_OUT => DOUT3k1);
 
 output_register3k2 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => reg_line(0),
 	          REG_IN => reg_DOUT_3k2,
 			  REG_OUT => DOUT3k2);
 ---------------------------------------------------------------------------------------
+    VIN_s <= VIN;
+	ff_generate : for i in 0 to 5 generate
+    first_ff_generate : if i=0 generate	
+    	input_ff : ff 
+    	port map( CLK => CLK, 
+    			  RST_N => RST_N, 
+    			  ENABLE => '1',
+    			  REG_IN => VIN_s,
+    			  REG_OUT => reg_line(i));
+    end generate first_ff_generate; 
 
+    ff_remaining_generate : if i>0 generate
+    	register_line : ff 
+    	port map( CLK => CLK, 
+    			  RST_N => RST_N, 
+    			  ENABLE => '1',
+    			  REG_IN => reg_line(i - 1), 
+    			  REG_OUT => reg_line(i));
+    end generate ff_remaining_generate;
+	end generate ff_generate; 
+	VOUT <= reg_line(5);
+	--VIN_s <= VIN;
 
-	VIN_s <= VIN;
-
-	valid_proc : process(CLK) is 
-	variable cnt : integer := 0;
-	begin
-		if RST_N = '0' then 
-			cnt := 0;
-		elsif rising_edge(CLK) then
-			if (VIN_s = '1') or (cnt > 5) then
-				cnt := cnt + 1;
-				if (cnt > 5) then 
-					VOUT <= VIN_s;
-					cnt := 6;
-				end if; 
-			end if; 
-		end if;
-	end process valid_proc;
+	--valid_proc : process(CLK) is 
+	--variable cnt : integer := 0;
+	--begin
+	--	if RST_N = '0' then 
+	--		cnt := 0;
+	--	elsif rising_edge(CLK) then
+	--		if (VIN_s = '1') or (cnt > 5) then
+	--			cnt := cnt + 1;
+	--			if (cnt > 5) then 
+	--				VOUT <= VIN_s;
+	--				cnt := 6;
+	--			end if; 
+	--		end if; 
+	--	end if;
+	--end process valid_proc;
 
 end architecture;

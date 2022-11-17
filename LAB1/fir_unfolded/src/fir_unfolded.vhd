@@ -39,6 +39,14 @@ architecture behavioural of myfir_unfolded is
 			  REG_OUT : out signed(NBIT-1 downto 0));
 	end component;
 
+	component ff is
+		   port ( CLK  	  : in std_logic;
+				  RST_N	  : in std_logic;
+				  ENABLE  : in std_logic;
+				  REG_IN  : in std_logic;
+				  REG_OUT : out std_logic);
+	  end component;
+
 	type registers_array is array (4 downto 0) of signed(NBIT-1 downto 0); -- Array for the delay line
 	type bcoeff_array is array (8 downto 0) of signed(NBIT-1 downto 0);     -- Array for the coefficients
 	type mult_array is array (8 downto 0) of signed(2*NBIT-1 downto 0);    -- Array for the results of multiplications
@@ -72,7 +80,7 @@ architecture behavioural of myfir_unfolded is
 	signal reg_DOUT_3k1 : signed(NBIT-1 downto 0);
 	signal reg_DOUT_3k2 : signed(NBIT-1 downto 0);
 	signal cnt : integer range 0 to 2;
-
+    signal VOUT_signal: std_logic;
 	constant tco : time := 10 ns;
 
 begin
@@ -294,6 +302,7 @@ output_register3k2 : reg
 
 
 	VIN_s <= VIN;
+	--VOUT <= VIN_s;
 
 	valid_proc : process(CLK) is 
 	variable cnt : integer := 0;
@@ -305,10 +314,19 @@ output_register3k2 : reg
 				cnt := cnt + 1;
 				if (cnt > 1) then 
 					VOUT <= VIN_s;
-					cnt := 2;
+					--cnt := 2;
 				end if; 
 			end if; 
 		end if;
 	end process valid_proc;
+
+	--FFdelay1 : ff 
+	--port map( CLK => CLK, 
+	--		  RST_N => RST_N, 
+	--		  ENABLE => VIN,
+	--          REG_IN => VOUT_signal,
+	--		  REG_OUT => VOUT);
+	
+
 
 end architecture;

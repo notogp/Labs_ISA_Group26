@@ -11,4 +11,5 @@ vcom -work ./work ../tb/*.vhd
 vlog -work ./work ../tb/*.v
 
 # run the simulation script
-vsim work.tb_fir -voptargs="+acc" -do "source sim.tcl"
+#vsim work.tb_fir -voptargs="+acc" -do "source sim.tcl"
+vsim work.tb_fir -c -voptargs="+acc" -do "source sim.tcl"

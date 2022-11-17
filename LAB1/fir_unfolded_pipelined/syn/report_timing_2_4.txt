@@ -1,0 +1,101 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'myfir_unfolded_pipelined' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : myfir_unfolded_pipelined
+Version: S-2021.06-SP4
+Date   : Thu Nov 17 19:40:27 2022
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: B2[1] (input port clocked by MY_CLK)
+  Endpoint: regs_3k_pipe_1_2/REG_OUT_reg[11]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  myfir_unfolded_pipelined
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.50       0.50 f
+  B2[1] (in)                                              0.00       0.50 f
+  U77/Z (BUF_X1)                                          0.04       0.54 f
+  mult_201/a[1] (myfir_unfolded_pipelined_DW_mult_tc_15)
+                                                          0.00       0.54 f
+  mult_201/U456/Z (BUF_X2)                                0.05       0.59 f
+  mult_201/U442/ZN (NAND2_X2)                             0.06       0.65 r
+  mult_201/U660/ZN (OAI22_X1)                             0.05       0.70 f
+  mult_201/U471/ZN (AND3_X1)                              0.05       0.75 f
+  mult_201/U338/Z (MUX2_X2)                               0.07       0.82 f
+  mult_201/U397/ZN (NAND2_X1)                             0.03       0.85 r
+  mult_201/U349/ZN (AND3_X1)                              0.05       0.90 r
+  mult_201/U394/ZN (OR2_X1)                               0.03       0.93 r
+  mult_201/U385/ZN (AND3_X2)                              0.05       0.99 r
+  mult_201/U384/ZN (OAI222_X1)                            0.05       1.03 f
+  mult_201/U368/ZN (INV_X1)                               0.04       1.07 r
+  mult_201/U369/ZN (OAI222_X1)                            0.05       1.12 f
+  mult_201/U363/ZN (NAND2_X1)                             0.03       1.15 r
+  mult_201/U365/ZN (AND3_X1)                              0.05       1.21 r
+  mult_201/U377/ZN (OR2_X1)                               0.04       1.25 r
+  mult_201/U379/ZN (NAND3_X1)                             0.04       1.28 f
+  mult_201/U381/ZN (NAND2_X1)                             0.03       1.31 r
+  mult_201/U356/ZN (AND3_X2)                              0.05       1.36 r
+  mult_201/U387/ZN (OAI222_X1)                            0.05       1.42 f
+  mult_201/U400/ZN (NAND2_X1)                             0.04       1.46 r
+  mult_201/U336/ZN (NAND3_X1)                             0.04       1.49 f
+  mult_201/U335/ZN (NAND2_X1)                             0.03       1.53 r
+  mult_201/U392/ZN (NAND3_X1)                             0.04       1.56 f
+  mult_201/U460/ZN (NAND2_X1)                             0.03       1.59 r
+  mult_201/U448/ZN (AND3_X1)                              0.05       1.64 r
+  mult_201/U465/ZN (OAI222_X1)                            0.04       1.69 f
+  mult_201/U433/ZN (INV_X1)                               0.03       1.72 r
+  mult_201/U434/ZN (OAI222_X1)                            0.05       1.77 f
+  mult_201/U10/CO (FA_X1)                                 0.10       1.87 f
+  mult_201/U408/ZN (NAND2_X1)                             0.04       1.91 r
+  mult_201/U409/ZN (NAND3_X1)                             0.04       1.95 f
+  mult_201/U414/ZN (NAND2_X1)                             0.04       1.99 r
+  mult_201/U374/ZN (NAND3_X1)                             0.04       2.03 f
+  mult_201/U492/ZN (NAND2_X1)                             0.04       2.07 r
+  mult_201/U494/ZN (NAND3_X1)                             0.04       2.11 f
+  mult_201/U497/ZN (NAND2_X1)                             0.04       2.14 r
+  mult_201/U500/ZN (NAND3_X1)                             0.04       2.18 f
+  mult_201/U420/ZN (NAND2_X1)                             0.03       2.21 r
+  mult_201/U421/ZN (NAND3_X1)                             0.04       2.26 f
+  mult_201/U425/ZN (NAND2_X1)                             0.03       2.28 r
+  mult_201/U351/ZN (AND3_X1)                              0.05       2.34 r
+  mult_201/product[23] (myfir_unfolded_pipelined_DW_mult_tc_15)
+                                                          0.00       2.34 r
+  regs_3k_pipe_1_2/REG_IN[11] (reg_73)                    0.00       2.34 r
+  regs_3k_pipe_1_2/U29/ZN (NAND2_X1)                      0.03       2.36 f
+  regs_3k_pipe_1_2/U3/ZN (NAND2_X1)                       0.03       2.39 r
+  regs_3k_pipe_1_2/REG_OUT_reg[11]/D (DFFR_X1)            0.01       2.40 r
+  data arrival time                                                  2.40
+
+  clock MY_CLK (rise edge)                                2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.07       2.43
+  regs_3k_pipe_1_2/REG_OUT_reg[11]/CK (DFFR_X1)           0.00       2.43 r
+  library setup time                                     -0.03       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -2.40
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
