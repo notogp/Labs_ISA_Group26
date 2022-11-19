@@ -1,0 +1,98 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'myfir_unfolded_pipelined' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : myfir_unfolded_pipelined
+Version: S-2021.06-SP4
+Date   : Sat Nov 19 03:17:04 2022
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: B0[1] (input port clocked by MY_CLK)
+  Endpoint: regs_3k1_pipe_1_0/REG_OUT_reg[10]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  myfir_unfolded_pipelined
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.50       0.50 r
+  B0[1] (in)                                              0.00       0.50 r
+  mult_307/a[1] (myfir_unfolded_pipelined_DW_mult_tc_22)
+                                                          0.00       0.50 r
+  mult_307/U338/Z (BUF_X1)                                0.11       0.61 r
+  mult_307/U540/Z (XOR2_X1)                               0.10       0.71 r
+  mult_307/U337/ZN (INV_X1)                               0.07       0.78 f
+  mult_307/U535/ZN (NAND2_X1)                             0.11       0.89 r
+  mult_307/U387/ZN (OAI22_X1)                             0.06       0.95 f
+  mult_307/U81/S (HA_X1)                                  0.08       1.03 f
+  mult_307/U532/ZN (AOI222_X1)                            0.11       1.14 r
+  mult_307/U336/ZN (INV_X1)                               0.03       1.17 f
+  mult_307/U531/ZN (AOI222_X1)                            0.09       1.26 r
+  mult_307/U335/ZN (INV_X1)                               0.03       1.29 f
+  mult_307/U530/ZN (AOI222_X1)                            0.09       1.38 r
+  mult_307/U332/ZN (INV_X1)                               0.03       1.41 f
+  mult_307/U529/ZN (AOI222_X1)                            0.09       1.50 r
+  mult_307/U331/ZN (INV_X1)                               0.03       1.53 f
+  mult_307/U528/ZN (AOI222_X1)                            0.09       1.62 r
+  mult_307/U328/ZN (INV_X1)                               0.03       1.65 f
+  mult_307/U527/ZN (AOI222_X1)                            0.09       1.74 r
+  mult_307/U327/ZN (INV_X1)                               0.03       1.77 f
+  mult_307/U526/ZN (AOI222_X1)                            0.09       1.86 r
+  mult_307/U324/ZN (INV_X1)                               0.03       1.89 f
+  mult_307/U525/ZN (AOI222_X1)                            0.09       1.98 r
+  mult_307/U323/ZN (INV_X1)                               0.03       2.01 f
+  mult_307/U524/ZN (AOI222_X1)                            0.09       2.10 r
+  mult_307/U322/ZN (INV_X1)                               0.03       2.13 f
+  mult_307/U523/ZN (AOI222_X1)                            0.09       2.22 r
+  mult_307/U321/ZN (INV_X1)                               0.03       2.25 f
+  mult_307/U522/ZN (AOI222_X1)                            0.09       2.34 r
+  mult_307/U326/ZN (INV_X1)                               0.03       2.37 f
+  mult_307/U521/ZN (AOI222_X1)                            0.09       2.46 r
+  mult_307/U325/ZN (INV_X1)                               0.03       2.49 f
+  mult_307/U520/ZN (AOI222_X1)                            0.09       2.58 r
+  mult_307/U329/ZN (INV_X1)                               0.03       2.61 f
+  mult_307/U10/CO (FA_X1)                                 0.09       2.70 f
+  mult_307/U9/CO (FA_X1)                                  0.09       2.79 f
+  mult_307/U8/CO (FA_X1)                                  0.09       2.88 f
+  mult_307/U7/CO (FA_X1)                                  0.09       2.97 f
+  mult_307/U6/CO (FA_X1)                                  0.09       3.06 f
+  mult_307/U5/CO (FA_X1)                                  0.09       3.15 f
+  mult_307/U4/S (FA_X1)                                   0.13       3.28 r
+  mult_307/product[22] (myfir_unfolded_pipelined_DW_mult_tc_22)
+                                                          0.00       3.28 r
+  regs_3k1_pipe_1_0/REG_IN[10] (reg_51)                   0.00       3.28 r
+  regs_3k1_pipe_1_0/U6/ZN (NAND2_X1)                      0.03       3.31 f
+  regs_3k1_pipe_1_0/U5/ZN (OAI21_X1)                      0.03       3.34 r
+  regs_3k1_pipe_1_0/REG_OUT_reg[10]/D (DFFR_X1)           0.01       3.35 r
+  data arrival time                                                  3.35
+
+  clock MY_CLK (rise edge)                               10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.07       9.93
+  regs_3k1_pipe_1_0/REG_OUT_reg[10]/CK (DFFR_X1)          0.00       9.93 r
+  library setup time                                     -0.04       9.89
+  data required time                                                 9.89
+  --------------------------------------------------------------------------
+  data required time                                                 9.89
+  data arrival time                                                 -3.35
+  --------------------------------------------------------------------------
+  slack (MET)                                                        6.54
+
+
+1

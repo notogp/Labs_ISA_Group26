@@ -2,7 +2,7 @@ analyze -f vhdl -lib WORK ../src/register.vhd
 analyze -f vhdl -lib WORK ../src/fir_unfolded_pipelined.vhd
 set power_preserve_rtl_hier_names true
 elaborate myfir_unfolded_pipelined -arch behavioural -lib WORK
-create_clock -name MY_CLK -period 2.5 CLK
+create_clock -name MY_CLK -period 10.0 CLK  
 set_dont_touch_network MY_CLK
 set_clock_uncertainty 0.07 [get_clocks MY_CLK]
 set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] CLK]
@@ -18,3 +18,6 @@ report_timing > report_timing.txt
 #write -f verilog -hierarchy -output ../netlist/myfir.v
 #write_sdc ../netlist/myfir.sdc
 #quit
+
+
+#CLK at 2.5 to met slack 0 

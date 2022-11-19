@@ -11,284 +11,294 @@ z2
 cModel Technology
 Z0 d/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/fir_standard/sim
 T_opt
-!s110 1668713926
-Vf:iJFSzbVgYl:S3DcbzP90
-04 6 4 work tb_fir fast 0
-=1-52540097797c-63768dc6-1c6d1-6b07
-o-quiet -auto_acc_if_foreign -work work +acc
-Z1 tCvgOpt 0
+!s110 1668798706
+Vb?K];4i>do:i]Ph66jd]33
+Z1 04 6 4 work tb_fir fast 0
+=1-52540097797c-6377d8f2-88b8f-1cdd
+Z2 o-quiet -auto_acc_if_foreign -work work +acc
+Z3 tCvgOpt 0
 n@_opt
-OL;O;2020.4;71
-Eclk_gen
-Z2 w1668009046
-Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
-Z4 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 27
+Z4 OL;O;2020.4;71
+T_opt1
+!s110 1668789281
+VRf7>D``cbKfa:E71j2c@D3
+R1
+=1-52540097797c-6377b420-cb63f-13e3
+R2
+R3
+n@_opt1
+R4
 R0
-Z7 8../tb/clk_gen.vhd
-Z8 F../tb/clk_gen.vhd
+Eclk_gen
+Z5 w1668009046
+Z6 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z7 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 66
+R0
+Z10 8../tb/clk_gen.vhd
+Z11 F../tb/clk_gen.vhd
 l0
 L6 1
 Vh6_zkAdHzibQ[7VPQ2ozi1
 !s100 JA8Ue1n4KCD]`nb]FQfQ[2
-Z9 OL;C;2020.4;71
+Z12 OL;C;2020.4;71
 32
-Z10 !s110 1668713923
+Z13 !s110 1668798704
 !i10b 1
-Z11 !s108 1668713923.000000
-Z12 !s90 -work|./work|../tb/clk_gen.vhd|../tb/data_maker_new.vhd|../tb/data_sink.vhd|
-Z13 !s107 ../tb/data_sink.vhd|../tb/data_maker_new.vhd|../tb/clk_gen.vhd|
+Z14 !s108 1668798704.000000
+Z15 !s90 -work|./work|../tb/clk_gen.vhd|../tb/data_maker_new.vhd|../tb/data_sink.vhd|
+Z16 !s107 ../tb/data_sink.vhd|../tb/data_maker_new.vhd|../tb/clk_gen.vhd|
 !i113 0
-Z14 o-work ./work
-Z15 tExplicit 1 CvgOpt 0
+Z17 o-work ./work
+Z18 tExplicit 1 CvgOpt 0
 Abeh
-R3
-R4
-R5
 R6
+R7
+R8
+R9
 DEx4 work 7 clk_gen 0 22 h6_zkAdHzibQ[7VPQ2ozi1
-!i122 27
+!i122 66
 l19
 L13 25
 Ve74^IC;fzmJR569=`MKm51
 !s100 nm?RAL?h<MGmmRG9B<G_G0
-R9
-32
-R10
-!i10b 1
-R11
 R12
+32
 R13
-!i113 0
+!i10b 1
 R14
 R15
+R16
+!i113 0
+R17
+R18
 Edata_maker
-Z16 w1667333616
-Z17 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
-R3
-R4
-R5
+Z19 w1667333616
+Z20 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
 R6
-!i122 27
+R7
+R8
+R9
+!i122 66
 R0
-Z18 8../tb/data_maker_new.vhd
-Z19 F../tb/data_maker_new.vhd
+Z21 8../tb/data_maker_new.vhd
+Z22 F../tb/data_maker_new.vhd
 l0
-Z20 L10 1
+Z23 L10 1
 VMWhLBR8V7DQ3=TUPz6KUm2
 !s100 ;bMaT:F85DjgCfzc7>hnH2
-R9
-32
-R10
-!i10b 1
-R11
 R12
+32
 R13
-!i113 0
+!i10b 1
 R14
 R15
-Abeh
+R16
+!i113 0
 R17
-R3
-R4
-R5
+R18
+Abeh
+R20
 R6
+R7
+R8
+R9
 DEx4 work 10 data_maker 0 22 MWhLBR8V7DQ3=TUPz6KUm2
-!i122 27
+!i122 66
 l42
 L30 76
 VoVYC1<N@_bCY2006zg>1U3
 !s100 1kUoR7@H3o`bTLHzIc1DP2
-R9
-32
-R10
-!i10b 1
-R11
 R12
+32
 R13
-!i113 0
+!i10b 1
 R14
 R15
-Edata_sink
-Z21 w1667395474
+R16
+!i113 0
 R17
-R3
-R4
-R5
-R6
-!i122 27
-R0
-Z22 8../tb/data_sink.vhd
-Z23 F../tb/data_sink.vhd
-l0
+R18
+Edata_sink
+Z24 w1667395474
 R20
+R6
+R7
+R8
+R9
+!i122 66
+R0
+Z25 8../tb/data_sink.vhd
+Z26 F../tb/data_sink.vhd
+l0
+R23
 Vcb6jD6OB4a0bJb=VdPX3S0
 !s100 RWEhnV1KFQVRRP8T:FgRz1
-R9
-32
-R10
-!i10b 1
-R11
 R12
+32
 R13
-!i113 0
+!i10b 1
 R14
 R15
-Abeh
+R16
+!i113 0
 R17
-R3
-R4
-R5
+R18
+Abeh
+R20
 R6
+R7
+R8
+R9
 DEx4 work 9 data_sink 0 22 cb6jD6OB4a0bJb=VdPX3S0
-!i122 27
+!i122 66
 l22
 L20 32
 V4H48go7;NXNM7mR]?IJf81
 !s100 gM:kV@omb68l:QBzT6hiH1
-R9
-32
-R10
-!i10b 1
-R11
 R12
+32
 R13
-!i113 0
+!i10b 1
 R14
 R15
+R16
+!i113 0
+R17
+R18
 Eff
-Z24 w1668711362
-Z25 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
-R5
-R6
-!i122 26
+Z27 w1668711362
+Z28 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R8
+R9
+!i122 65
 R0
-Z26 8../src/ff.vhd
-Z27 F../src/ff.vhd
+Z29 8../src/ff.vhd
+Z30 F../src/ff.vhd
 l0
 L5 1
 V1b6_ScJ=9A[nTnh>ofh=R2
 !s100 _z1TJ[KITZGSNJ;aW9jFZ3
-R9
+R12
 32
-R10
+R13
 !i10b 1
-R11
-Z28 !s90 -work|./work|../src/ff.vhd|../src/fir.vhd|../src/register.vhd|
-Z29 !s107 ../src/register.vhd|../src/fir.vhd|../src/ff.vhd|
+Z31 !s108 1668798703.000000
+Z32 !s90 -work|./work|../src/ff.vhd|../src/fir.vhd|../src/register.vhd|
+Z33 !s107 ../src/register.vhd|../src/fir.vhd|../src/ff.vhd|
 !i113 0
-R14
-R15
+R17
+R18
 Abehavioural
-R25
-R5
-R6
+R28
+R8
+R9
 DEx4 work 2 ff 0 22 1b6_ScJ=9A[nTnh>ofh=R2
-!i122 26
+!i122 65
 l15
 L13 17
 VXAV`PN4Gd]Kf=2J34Uj_a1
 !s100 [2j8K?Yf]=2@PLg8zSBc13
-R9
+R12
 32
-R10
+R13
 !i10b 1
-R11
-R28
-R29
+R31
+R32
+R33
 !i113 0
-R14
-R15
+R17
+R18
 Emyfir
-Z30 w1668713918
-R25
-R5
-R6
-!i122 26
+Z34 w1668798695
+R28
+R8
+R9
+!i122 65
 R0
-Z31 8../src/fir.vhd
-Z32 F../src/fir.vhd
+Z35 8../src/fir.vhd
+Z36 F../src/fir.vhd
 l0
 L8 1
 VEJYbnUi=Xjblm<R10zAV31
 !s100 Yz]ghC^kVcFjGcndHGU>n2
-R9
+R12
 32
-R10
+R13
 !i10b 1
-R11
-R28
-R29
+R31
+R32
+R33
 !i113 0
-R14
-R15
+R17
+R18
 Abehavioural
-R25
-R5
-R6
+R28
+R8
+R9
 DEx4 work 5 myfir 0 22 EJYbnUi=Xjblm<R10zAV31
-!i122 26
+!i122 65
 l66
 L28 163
 Vz9z8kZ@Y6I=::QhciNae63
 !s100 [M]eX=B79;kQ2KIX^n2Z^3
-R9
+R12
 32
-R10
+R13
 !i10b 1
-R11
-R28
-R29
+R31
+R32
+R33
 !i113 0
-R14
-R15
+R17
+R18
 Ereg
-Z33 w1667387627
-R25
-R5
-R6
-!i122 26
+Z37 w1667387627
+R28
+R8
+R9
+!i122 65
 R0
-Z34 8../src/register.vhd
-Z35 F../src/register.vhd
+Z38 8../src/register.vhd
+Z39 F../src/register.vhd
 l0
 L5 1
 V`X^`@88_6A<YLco>U[Io91
 !s100 HUj0N3U0JAE[Ch3@k`]UR3
-R9
+R12
 32
-R10
+R13
 !i10b 1
-R11
-R28
-R29
+R31
+R32
+R33
 !i113 0
-R14
-R15
+R17
+R18
 Abehavioural
-R25
-R5
-R6
+R28
+R8
+R9
 DEx4 work 3 reg 0 22 `X^`@88_6A<YLco>U[Io91
-!i122 26
+!i122 65
 l16
 L14 17
 V6IeJemXe?:HE<g<E9gS3Y3
 !s100 @YA6oN1`1`zF@=DSNa_PD3
-R9
+R12
 32
-R10
+R13
 !i10b 1
-R11
-R28
-R29
+R31
+R32
+R33
 !i113 0
-R14
-R15
+R17
+R18
 vtb_fir
-R10
+R13
 !i10b 1
 !s100 BFU3Kn:@KSeBM=M@?ide`2
 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -297,16 +307,16 @@ R0
 w1667325884
 8../tb/tb_fir.v
 F../tb/tb_fir.v
-!i122 28
+!i122 67
 L0 3 60
 VDg1SIo80bB@j0V0VzS_@n1
 OL;L;2020.4;71
 r1
 !s85 0
 31
-R11
+R14
 !s107 ../tb/tb_fir.v|
 !s90 -work|./work|../tb/tb_fir.v|
 !i113 0
 o-work ./work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
+R3

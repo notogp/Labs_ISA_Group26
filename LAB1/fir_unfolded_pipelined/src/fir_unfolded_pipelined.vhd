@@ -47,7 +47,7 @@ architecture behavioural of myfir_unfolded_pipelined is
 			   REG_OUT : out std_logic);
    end component;
 
-	type registers_array is array (5 downto 0) of std_logic; -- Array for the delay line
+	type registers_array is array (6 downto 0) of std_logic; -- Array for the delay line
 	type bcoeff_array is array (8 downto 0) of signed(NBIT-1 downto 0);     -- Array for the coefficients
 	type mult_array is array (8 downto 0) of signed(2*NBIT-1 downto 0);    -- Array for the results of multiplications
 	type mult_array_12 is array (8 downto 0) of signed(NBIT-1 downto 0);    -- Array for the results of multiplications
@@ -80,6 +80,21 @@ architecture behavioural of myfir_unfolded_pipelined is
 	signal sum_3k1        : sum_array;
 	signal sum_3k2        : sum_array;
 	signal VIN_s : std_logic;
+	signal VIN_s1 : std_logic;
+	signal VIN_s2 : std_logic;
+	signal VIN_s3 : std_logic;
+	signal VIN_s4 : std_logic;
+	signal VIN_s5 : std_logic;
+	signal VIN_s6 : std_logic;
+	signal VIN_s7 : std_logic;
+	signal VIN_s8 : std_logic;
+	signal VOUT_s : std_logic;
+	signal VOUT_s1 : std_logic;
+	signal VOUT_s2 : std_logic;
+	signal VOUT_s3 : std_logic;
+	signal VOUT_s4 : std_logic;
+	signal VOUT_s5 : std_logic;
+	signal VOUT_s6 : std_logic;
 	signal reg_DIN_3k : signed(NBIT-1 downto 0);
 	signal reg_DIN_3k1 : signed(NBIT-1 downto 0);
 	signal reg_DIN_3k2 : signed(NBIT-1 downto 0);
@@ -105,6 +120,7 @@ architecture behavioural of myfir_unfolded_pipelined is
 	signal sum_3k2_out_reg1 : signed(NBIT-1 downto 0);
 	signal sum_3k2_out_reg2 : signed(NBIT-1 downto 0);
 	signal sum_3k2_out_reg3 : signed(NBIT-1 downto 0);
+    signal ucnt : unsigned(11 downto 0) := (others => '0');
 
 	constant tco : time := 10 ns;
 
@@ -125,21 +141,21 @@ begin
 input_register3k : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s,
 	          REG_IN => DIN3k,
 			  REG_OUT => reg_DIN_3k);
 
 input_register3k1 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s,
 			  REG_IN => DIN3k1,
 			  REG_OUT => reg_DIN_3k1);
 
 input_register3k2 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s,
 	          REG_IN => DIN3k2,
 			  REG_OUT => reg_DIN_3k2);
 ---------------------------------------------------------------------------------------
@@ -147,21 +163,21 @@ input_register3k2 : reg
 reg3k_minus1: reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s,
 	          REG_IN => reg_DIN_3k,
 			  REG_OUT => reg_DIN_3k_minus1);
 
 reg3k1_minus1: reg 
 	port map( CLK => CLK, 
 			RST_N => RST_N, 
-			ENABLE => VIN,
+			ENABLE => VIN_s,
 			REG_IN => reg_DIN_3k1,
 			REG_OUT => reg_DIN_3k1_minus1);
 
 reg3k2_minus1: reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s,
 			  REG_IN => reg_DIN_3k2,
 			  REG_OUT => reg_DIN_3k2_minus1);
 ---------------------------------------------------------------------------------------
@@ -169,21 +185,21 @@ reg3k2_minus1: reg
 reg3k_minus2: reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s,
 	          REG_IN => reg_DIN_3k_minus1,
 			  REG_OUT => reg_DIN_3k_minus2);
 
 reg3k1_minus2: reg 
 	port map( CLK => CLK, 
 			RST_N => RST_N, 
-			ENABLE => VIN,
+			ENABLE => VIN_s,
 			REG_IN => reg_DIN_3k1_minus1,
 			REG_OUT => reg_DIN_3k1_minus2);
 
 reg3k2_minus2: reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s,
 			  REG_IN => reg_DIN_3k2_minus1,
 			  REG_OUT => reg_DIN_3k2_minus2);
 ---------------------------------------------------------------------------------------
@@ -191,14 +207,14 @@ reg3k2_minus2: reg
 reg3k1_minus3: reg 
 	port map( CLK => CLK, 
 			RST_N => RST_N, 
-			ENABLE => VIN,
+			ENABLE => VIN_s,
 			REG_IN => reg_DIN_3k1_minus2,
 			REG_OUT => reg_DIN_3k1_minus3);
 
 reg3k2_minus3: reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s,
 			  REG_IN => reg_DIN_3k2_minus2,
 			  REG_OUT => reg_DIN_3k2_minus3);
 ---------------------------------------------------------------------------------------
@@ -224,7 +240,7 @@ registers_generate_3k_pipe1 : for i in 0 to 8 generate
 	regs_3k_pipe_1 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => mult_12_3k(i),
 			  REG_OUT => reg_3k_pipe1(i));
 end generate registers_generate_3k_pipe1;
@@ -233,7 +249,7 @@ registers_generate_3k_pipe2 : for i in 0 to 5 generate
 	regs_3k_pipe_2 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => reg_3k_pipe1(i+3),
 			  REG_OUT => reg_3k_pipe2(i));
 end generate registers_generate_3k_pipe2;
@@ -242,7 +258,7 @@ registers_generate_3k_pipe3 : for i in 0 to 3 generate
 	regs_3k_pipe_3 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => reg_3k_pipe2(i+2),
 			  REG_OUT => reg_3k_pipe3(i));
 end generate registers_generate_3k_pipe3;
@@ -251,7 +267,7 @@ registers_generate_3k_pipe4 : for i in 0 to 1 generate
 	regs_3k_pipe_4 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => reg_3k_pipe3(i+2),
 			  REG_OUT => reg_3k_pipe4(i));
 end generate registers_generate_3k_pipe4;
@@ -263,7 +279,7 @@ end generate registers_generate_3k_pipe4;
 	add_3k_pipe_1 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => sum_3k(1),
 			  REG_OUT => sum_3k_out_reg1);
 
@@ -272,7 +288,7 @@ end generate registers_generate_3k_pipe4;
 	add_3k_pipe_2 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => sum_3k(3),
 			  REG_OUT => sum_3k_out_reg2);
 	sum_3k(4) <= sum_3k_out_reg2 + reg_3k_pipe3(0);
@@ -280,7 +296,7 @@ end generate registers_generate_3k_pipe4;
 	add_3k_pipe_3 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => sum_3k(5),
 			  REG_OUT => sum_3k_out_reg3);
     sum_3k(6) <= sum_3k_out_reg3 + reg_3k_pipe4(0);
@@ -307,7 +323,7 @@ registers_generate_3k1_pipe1 : for i in 0 to 8 generate
 	regs_3k1_pipe_1 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => mult_12_3k1(i),
 			  REG_OUT => reg_3k1_pipe1(i));
 end generate registers_generate_3k1_pipe1;
@@ -316,7 +332,7 @@ registers_generate_3k1_pipe2 : for i in 0 to 5 generate
 	regs_3k1_pipe_2 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => reg_3k1_pipe1(i+3),
 			  REG_OUT => reg_3k1_pipe2(i));
 end generate registers_generate_3k1_pipe2;
@@ -325,7 +341,7 @@ registers_generate_3k1_pipe3 : for i in 0 to 3 generate
 	regs_3k1_pipe_3 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => reg_3k1_pipe2(i+2),
 			  REG_OUT => reg_3k1_pipe3(i));
 end generate registers_generate_3k1_pipe3;
@@ -334,7 +350,7 @@ registers_generate_3k1_pipe4 : for i in 0 to 1 generate
 	regs_3k1_pipe_4 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => reg_3k1_pipe3(i+2),
 			  REG_OUT => reg_3k1_pipe4(i));
 end generate registers_generate_3k1_pipe4;
@@ -346,7 +362,7 @@ end generate registers_generate_3k1_pipe4;
 	add_3k1_pipe_1 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => sum_3k1(1),
 			  REG_OUT => sum_3k1_out_reg1);
 
@@ -355,7 +371,7 @@ end generate registers_generate_3k1_pipe4;
 	add_3k1_pipe_2 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => sum_3k1(3),
 			  REG_OUT => sum_3k1_out_reg2);
 	sum_3k1(4) <= sum_3k1_out_reg2 + reg_3k1_pipe3(0);
@@ -363,7 +379,7 @@ end generate registers_generate_3k1_pipe4;
 	add_3k1_pipe_3 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => sum_3k1(5),
 			  REG_OUT => sum_3k1_out_reg3);
     sum_3k1(6) <= sum_3k1_out_reg3 + reg_3k1_pipe4(0);
@@ -391,7 +407,7 @@ registers_generate_3k2_pipe1 : for i in 0 to 8 generate
 	regs_3k2_pipe_1 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => mult_12_3k2(i),
 			  REG_OUT => reg_3k2_pipe1(i));
 end generate registers_generate_3k2_pipe1;
@@ -400,7 +416,7 @@ registers_generate_3k2_pipe2 : for i in 0 to 5 generate
 	regs_3k2_pipe_2 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => reg_3k2_pipe1(i+3),
 			  REG_OUT => reg_3k2_pipe2(i));
 end generate registers_generate_3k2_pipe2;
@@ -409,7 +425,7 @@ registers_generate_3k2_pipe3 : for i in 0 to 3 generate
 	regs_3k2_pipe_3 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => reg_3k2_pipe2(i+2),
 			  REG_OUT => reg_3k2_pipe3(i));
 end generate registers_generate_3k2_pipe3;
@@ -418,7 +434,7 @@ registers_generate_3k2_pipe4 : for i in 0 to 1 generate
 	regs_3k2_pipe_4 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => reg_3k2_pipe3(i+2),
 			  REG_OUT => reg_3k2_pipe4(i));
 end generate registers_generate_3k2_pipe4;
@@ -430,7 +446,7 @@ end generate registers_generate_3k2_pipe4;
 	add_3k2_pipe_1 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => sum_3k2(1),
 			  REG_OUT => sum_3k2_out_reg1);
 
@@ -439,7 +455,7 @@ end generate registers_generate_3k2_pipe4;
 	add_3k2_pipe_2 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => sum_3k2(3),
 			  REG_OUT => sum_3k2_out_reg2);
 	sum_3k2(4) <= sum_3k2_out_reg2 + reg_3k2_pipe3(0);
@@ -447,7 +463,7 @@ end generate registers_generate_3k2_pipe4;
 	add_3k2_pipe_3 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => VIN,
+			  ENABLE => VIN_s1,
 			  REG_IN => sum_3k2(5),
 			  REG_OUT => sum_3k2_out_reg3);
     sum_3k2(6) <= sum_3k2_out_reg3 + reg_3k2_pipe4(0);
@@ -457,61 +473,56 @@ end generate registers_generate_3k2_pipe4;
 output_register3k : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => reg_line(0),
+			  ENABLE => VIN_s1,
 	          REG_IN => reg_DOUT_3k,
 			  REG_OUT => DOUT3k);
 
 output_register3k1 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => reg_line(0),
+			  ENABLE => VIN_s1,
 			  REG_IN => reg_DOUT_3k1,
 			  REG_OUT => DOUT3k1);
 
 output_register3k2 : reg 
 	port map( CLK => CLK, 
 			  RST_N => RST_N, 
-			  ENABLE => reg_line(0),
+			  ENABLE => VIN_s1,
 	          REG_IN => reg_DOUT_3k2,
 			  REG_OUT => DOUT3k2);
 ---------------------------------------------------------------------------------------
     VIN_s <= VIN;
-	ff_generate : for i in 0 to 5 generate
-    first_ff_generate : if i=0 generate	
-    	input_ff : ff 
-    	port map( CLK => CLK, 
-    			  RST_N => RST_N, 
-    			  ENABLE => '1',
-    			  REG_IN => VIN_s,
-    			  REG_OUT => reg_line(i));
-    end generate first_ff_generate; 
 
-    ff_remaining_generate : if i>0 generate
-    	register_line : ff 
-    	port map( CLK => CLK, 
-    			  RST_N => RST_N, 
-    			  ENABLE => '1',
-    			  REG_IN => reg_line(i - 1), 
-    			  REG_OUT => reg_line(i));
-    end generate ff_remaining_generate;
-	end generate ff_generate; 
-	VOUT <= reg_line(5);
-	--VIN_s <= VIN;
+valid_proc : process(CLK) is 
+begin
+	if (ucnt < "000001111110") then 
+		VIN_s1 <= VIN_s;
+		if RST_N = '0' then 
+			ucnt <= (others => '0');
+		elsif rising_edge(CLK) then
+			if (VIN_s = '1') or (ucnt > "000000000100") then --4
+				ucnt <= ucnt + 1;
+				if (ucnt > "000000000100") and (ucnt < "000001111110") then --4 to 126
+					VOUT <= VIN_s;
+				end if; 
+			end if;
+		end if;
+	elsif (ucnt > "000001111101") and (ucnt < "000010001001") then --125 to 137 
+			ucnt <= ucnt + 1;
+			VIN_s1 <= '1';
+			VOUT <= '1';
+	else
+			VOUT <= '0';
+	end if;
+end process valid_proc;
 
-	--valid_proc : process(CLK) is 
-	--variable cnt : integer := 0;
-	--begin
-	--	if RST_N = '0' then 
-	--		cnt := 0;
-	--	elsif rising_edge(CLK) then
-	--		if (VIN_s = '1') or (cnt > 5) then
-	--			cnt := cnt + 1;
-	--			if (cnt > 5) then 
-	--				VOUT <= VIN_s;
-	--				cnt := 6;
-	--			end if; 
-	--		end if; 
-	--	end if;
-	--end process valid_proc;
 
 end architecture;
+
+
+--VIN AND VOUT MUST BE DELAYED BY THE SAME AMOUNT TO AVOID THAT 
+--UNWANTED VALUES WILL BE WRITTEN ON THE results_VHD.txt FILE
+
+
+
+
