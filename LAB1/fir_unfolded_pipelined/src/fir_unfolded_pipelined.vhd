@@ -81,20 +81,6 @@ architecture behavioural of myfir_unfolded_pipelined is
 	signal sum_3k2        : sum_array;
 	signal VIN_s : std_logic;
 	signal VIN_s1 : std_logic;
-	signal VIN_s2 : std_logic;
-	signal VIN_s3 : std_logic;
-	signal VIN_s4 : std_logic;
-	signal VIN_s5 : std_logic;
-	signal VIN_s6 : std_logic;
-	signal VIN_s7 : std_logic;
-	signal VIN_s8 : std_logic;
-	signal VOUT_s : std_logic;
-	signal VOUT_s1 : std_logic;
-	signal VOUT_s2 : std_logic;
-	signal VOUT_s3 : std_logic;
-	signal VOUT_s4 : std_logic;
-	signal VOUT_s5 : std_logic;
-	signal VOUT_s6 : std_logic;
 	signal reg_DIN_3k : signed(NBIT-1 downto 0);
 	signal reg_DIN_3k1 : signed(NBIT-1 downto 0);
 	signal reg_DIN_3k2 : signed(NBIT-1 downto 0);
@@ -494,27 +480,52 @@ output_register3k2 : reg
     VIN_s <= VIN;
 
 valid_proc : process(CLK) is 
-begin
-	if (ucnt < "000001111110") then 
+	variable ucnt : integer := 0;
+	begin
+	if (ucnt < 126) then 
 		VIN_s1 <= VIN_s;
 		if RST_N = '0' then 
-			ucnt <= (others => '0');
+			ucnt := 0 ;
 		elsif rising_edge(CLK) then
-			if (VIN_s = '1') or (ucnt > "000000000100") then --4
-				ucnt <= ucnt + 1;
-				if (ucnt > "000000000100") and (ucnt < "000001111110") then --4 to 126
+			if (VIN_s = '1') or (ucnt > 5) then --5
+				ucnt := ucnt + 1;
+				if (ucnt > 5) and (ucnt < 126) then --5 to 126
 					VOUT <= VIN_s;
 				end if; 
 			end if;
 		end if;
-	elsif (ucnt > "000001111101") and (ucnt < "000010001001") then --125 to 137 
-			ucnt <= ucnt + 1;
+	elsif (ucnt > 125) and (ucnt < 137) then --125 to 137 
+			ucnt := ucnt + 1;
 			VIN_s1 <= '1';
 			VOUT <= '1';
 	else
 			VOUT <= '0';
 	end if;
 end process valid_proc;
+
+
+--valid_proc : process(CLK) is 
+--begin
+--	if (ucnt < "000001111110") then  --126
+--		VIN_s1 <= VIN_s;
+--		if RST_N = '0' then 
+--			ucnt <= (others => '0');
+--		elsif rising_edge(CLK) then
+--			if (VIN_s = '1') or (ucnt > "000000000100") then --4
+--				ucnt <= ucnt + 1;
+--				if (ucnt > "000000000100") and (ucnt < "000001111110") then --4 to 126
+--					VOUT <= VIN_s;
+--				end if; 
+--			end if;
+--		end if;
+--	elsif (ucnt > "000001111101") and (ucnt < "000010001001") then --125 to 137 
+--			ucnt <= ucnt + 1;
+--			VIN_s1 <= '1';
+--			VOUT <= '1';
+--	else
+--			VOUT <= '0';
+--	end if;
+--end process valid_proc;
 
 
 end architecture;

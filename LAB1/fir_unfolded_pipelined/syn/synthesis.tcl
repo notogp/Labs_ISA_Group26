@@ -10,14 +10,14 @@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
 set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
 set_load $OLOAD [all_outputs]
 compile
-report_timing > report_timing.txt
-#report_area > report_area_12_4.txt
-#ungroup -all -flatten
-#change_names -hierarchy -rules verilog
-#write_sdf ../netlist/myfir.sdf
-#write -f verilog -hierarchy -output ../netlist/myfir.v
-#write_sdc ../netlist/myfir.sdc
-#quit
+report_timing > report_timing_10.txt
+report_area > report_area_10.txt
+ungroup -all -flatten
+change_names -hierarchy -rules verilog
+write_sdf ../netlist/myfir_unfolded_pipelined.sdf
+write -f verilog -hierarchy -output ../netlist/myfir_unfolded_pipelined.v
+write_sdc ../netlist/myfir_unfolded_pipelined.sdc
+quit
 
 
 #CLK at 2.5 to met slack 0 

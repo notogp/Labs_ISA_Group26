@@ -15,308 +15,298 @@ T_opt
 Vb?K];4i>do:i]Ph66jd]33
 Z1 04 6 4 work tb_fir fast 0
 =1-52540097797c-6377d8f2-88b8f-1cdd
-Z2 o-quiet -auto_acc_if_foreign -work work +acc
-Z3 tCvgOpt 0
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
 n@_opt
-Z4 OL;O;2020.4;71
+Z3 OL;O;2020.4;71
+R0
 T_opt1
-!s110 1668789281
-VRf7>D``cbKfa:E71j2c@D3
+!s110 1668946715
+VTOn^L:cHFPAF5oh2[BO5b2
 R1
-=1-52540097797c-6377b420-cb63f-13e3
+=1-52540097797c-637a1b19-e4a0d-7bdd
+o-quiet -auto_acc_if_foreign -work work -L /eda/dk/nangate45/verilog/qsim2020.4 -sdftyp /tb_fir/UUT=../netlist/myfir.sdf -suppress 1948
 R2
-R3
 n@_opt1
-R4
+R3
 R0
+T_opt2
+!s110 1668946954
+VENz>QO2ZMV4YNJSQ6]jCe0
+R1
+=1-52540097797c-637a1c08-a96bc-1b05
+o-quiet -auto_acc_if_foreign -work work -L /eda/dk/nangate45/verilog/qsim2020.4 -sdftyp /tb_fir/UUT=../innovus/myfir_post_route.sdf -suppress 1948
+R2
+n@_opt2
+R3
 Eclk_gen
-Z5 w1668009046
-Z6 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
-Z7 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 66
+Z4 w1668009046
+Z5 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z6 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 76
 R0
-Z10 8../tb/clk_gen.vhd
-Z11 F../tb/clk_gen.vhd
+Z9 8../tb/clk_gen.vhd
+Z10 F../tb/clk_gen.vhd
 l0
 L6 1
 Vh6_zkAdHzibQ[7VPQ2ozi1
 !s100 JA8Ue1n4KCD]`nb]FQfQ[2
-Z12 OL;C;2020.4;71
+Z11 OL;C;2020.4;71
 32
-Z13 !s110 1668798704
+Z12 !s110 1668946948
 !i10b 1
-Z14 !s108 1668798704.000000
-Z15 !s90 -work|./work|../tb/clk_gen.vhd|../tb/data_maker_new.vhd|../tb/data_sink.vhd|
-Z16 !s107 ../tb/data_sink.vhd|../tb/data_maker_new.vhd|../tb/clk_gen.vhd|
+Z13 !s108 1668946948.000000
+Z14 !s90 -work|./work|../tb/clk_gen.vhd|
+Z15 !s107 ../tb/clk_gen.vhd|
 !i113 0
-Z17 o-work ./work
-Z18 tExplicit 1 CvgOpt 0
+Z16 o-work ./work
+Z17 tExplicit 1 CvgOpt 0
 Abeh
+R5
 R6
 R7
 R8
-R9
 DEx4 work 7 clk_gen 0 22 h6_zkAdHzibQ[7VPQ2ozi1
-!i122 66
+!i122 76
 l19
 L13 25
 Ve74^IC;fzmJR569=`MKm51
 !s100 nm?RAL?h<MGmmRG9B<G_G0
-R12
+R11
 32
-R13
+R12
 !i10b 1
+R13
 R14
 R15
-R16
 !i113 0
+R16
 R17
-R18
 Edata_maker
-Z19 w1667333616
-Z20 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+Z18 w1667333616
+Z19 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+R5
 R6
 R7
 R8
-R9
-!i122 66
+!i122 77
 R0
-Z21 8../tb/data_maker_new.vhd
-Z22 F../tb/data_maker_new.vhd
+Z20 8../tb/data_maker_new.vhd
+Z21 F../tb/data_maker_new.vhd
 l0
-Z23 L10 1
+Z22 L10 1
 VMWhLBR8V7DQ3=TUPz6KUm2
 !s100 ;bMaT:F85DjgCfzc7>hnH2
-R12
+R11
 32
-R13
+R12
 !i10b 1
-R14
-R15
-R16
+R13
+Z23 !s90 -work|./work|../tb/data_maker_new.vhd|
+Z24 !s107 ../tb/data_maker_new.vhd|
 !i113 0
+R16
 R17
-R18
 Abeh
-R20
+R19
+R5
 R6
 R7
 R8
-R9
 DEx4 work 10 data_maker 0 22 MWhLBR8V7DQ3=TUPz6KUm2
-!i122 66
+!i122 77
 l42
 L30 76
 VoVYC1<N@_bCY2006zg>1U3
 !s100 1kUoR7@H3o`bTLHzIc1DP2
-R12
+R11
 32
-R13
+R12
 !i10b 1
-R14
-R15
-R16
+R13
+R23
+R24
 !i113 0
+R16
 R17
-R18
 Edata_sink
-Z24 w1667395474
-R20
+Z25 w1667395474
+R19
+R5
 R6
 R7
 R8
-R9
-!i122 66
+!i122 78
 R0
-Z25 8../tb/data_sink.vhd
-Z26 F../tb/data_sink.vhd
+Z26 8../tb/data_sink.vhd
+Z27 F../tb/data_sink.vhd
 l0
-R23
+R22
 Vcb6jD6OB4a0bJb=VdPX3S0
 !s100 RWEhnV1KFQVRRP8T:FgRz1
-R12
+R11
 32
-R13
+Z28 !s110 1668946949
 !i10b 1
-R14
-R15
-R16
+R13
+Z29 !s90 -work|./work|../tb/data_sink.vhd|
+Z30 !s107 ../tb/data_sink.vhd|
 !i113 0
+R16
 R17
-R18
 Abeh
-R20
+R19
+R5
 R6
 R7
 R8
-R9
 DEx4 work 9 data_sink 0 22 cb6jD6OB4a0bJb=VdPX3S0
-!i122 66
+!i122 78
 l22
 L20 32
 V4H48go7;NXNM7mR]?IJf81
 !s100 gM:kV@omb68l:QBzT6hiH1
-R12
+R11
 32
-R13
+R28
 !i10b 1
-R14
-R15
-R16
+R13
+R29
+R30
 !i113 0
+R16
 R17
-R18
 Eff
-Z27 w1668711362
-Z28 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z31 w1668711362
+Z32 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R7
 R8
-R9
-!i122 65
+!i122 68
 R0
-Z29 8../src/ff.vhd
-Z30 F../src/ff.vhd
+Z33 8../src/ff.vhd
+Z34 F../src/ff.vhd
 l0
 L5 1
 V1b6_ScJ=9A[nTnh>ofh=R2
 !s100 _z1TJ[KITZGSNJ;aW9jFZ3
-R12
+R11
 32
-R13
+Z35 !s110 1668941848
 !i10b 1
-Z31 !s108 1668798703.000000
-Z32 !s90 -work|./work|../src/ff.vhd|../src/fir.vhd|../src/register.vhd|
-Z33 !s107 ../src/register.vhd|../src/fir.vhd|../src/ff.vhd|
+Z36 !s108 1668941848.000000
+Z37 !s90 -work|./work|../src/ff.vhd|../src/fir.vhd|../src/register.vhd|
+Z38 !s107 ../src/register.vhd|../src/fir.vhd|../src/ff.vhd|
 !i113 0
+R16
 R17
-R18
 Abehavioural
-R28
+R32
+R7
 R8
-R9
 DEx4 work 2 ff 0 22 1b6_ScJ=9A[nTnh>ofh=R2
-!i122 65
+!i122 68
 l15
 L13 17
 VXAV`PN4Gd]Kf=2J34Uj_a1
 !s100 [2j8K?Yf]=2@PLg8zSBc13
-R12
+R11
 32
-R13
+R35
 !i10b 1
-R31
-R32
-R33
+R36
+R37
+R38
 !i113 0
+R16
 R17
-R18
-Emyfir
-Z34 w1668798695
+vmyfir
 R28
-R8
-R9
-!i122 65
+!i10b 1
+!s100 300_O6Mjj<fzd<0hI7Sh32
+Z39 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IXoKIVE4z7:z7_8?90K=3^2
 R0
-Z35 8../src/fir.vhd
-Z36 F../src/fir.vhd
-l0
-L8 1
-VEJYbnUi=Xjblm<R10zAV31
-!s100 Yz]ghC^kVcFjGcndHGU>n2
-R12
-32
-R13
-!i10b 1
-R31
-R32
-R33
+w1668000173
+8../innovus/myfir_post_route.v
+F../innovus/myfir_post_route.v
+!i122 79
+L0 15 16072
+Z40 VDg1SIo80bB@j0V0VzS_@n1
+Z41 OL;L;2020.4;71
+r1
+!s85 0
+31
+Z42 !s108 1668946949.000000
+!s107 ../innovus/myfir_post_route.v|
+!s90 -work|./work|../innovus/myfir_post_route.v|
 !i113 0
-R17
-R18
-Abehavioural
-R28
-R8
-R9
-DEx4 work 5 myfir 0 22 EJYbnUi=Xjblm<R10zAV31
-!i122 65
-l66
-L28 163
-Vz9z8kZ@Y6I=::QhciNae63
-!s100 [M]eX=B79;kQ2KIX^n2Z^3
-R12
-32
-R13
-!i10b 1
-R31
-R32
-R33
-!i113 0
-R17
-R18
+Z43 o-work ./work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
 Ereg
-Z37 w1667387627
-R28
+Z44 w1667387627
+R32
+R7
 R8
-R9
-!i122 65
+!i122 68
 R0
-Z38 8../src/register.vhd
-Z39 F../src/register.vhd
+Z45 8../src/register.vhd
+Z46 F../src/register.vhd
 l0
 L5 1
 V`X^`@88_6A<YLco>U[Io91
 !s100 HUj0N3U0JAE[Ch3@k`]UR3
-R12
+R11
 32
-R13
+R35
 !i10b 1
-R31
-R32
-R33
+R36
+R37
+R38
 !i113 0
+R16
 R17
-R18
 Abehavioural
-R28
+R32
+R7
 R8
-R9
 DEx4 work 3 reg 0 22 `X^`@88_6A<YLco>U[Io91
-!i122 65
+!i122 68
 l16
 L14 17
 V6IeJemXe?:HE<g<E9gS3Y3
 !s100 @YA6oN1`1`zF@=DSNa_PD3
-R12
+R11
 32
-R13
+R35
 !i10b 1
-R31
-R32
-R33
+R36
+R37
+R38
 !i113 0
+R16
 R17
-R18
 vtb_fir
-R13
+R28
 !i10b 1
 !s100 BFU3Kn:@KSeBM=M@?ide`2
-!s11b Dg1SIo80bB@j0V0VzS_@n1
+R39
 I_n[7NT85OaWF>lWiXWQ6i0
 R0
 w1667325884
 8../tb/tb_fir.v
 F../tb/tb_fir.v
-!i122 67
+!i122 80
 L0 3 60
-VDg1SIo80bB@j0V0VzS_@n1
-OL;L;2020.4;71
+R40
+R41
 r1
 !s85 0
 31
-R14
+R42
 !s107 ../tb/tb_fir.v|
 !s90 -work|./work|../tb/tb_fir.v|
 !i113 0
-o-work ./work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R3
+R43
+R2

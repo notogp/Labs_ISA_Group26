@@ -4,7 +4,7 @@ source /eda/scripts/init_design_vision > /dev/null
 vcom -work ./work ../tb/clk_gen.vhd
 vcom -work ./work ../tb/data_maker_new.vhd
 vcom -work ./work ../tb/data_sink.vhd
-vlog -work ./work ../netlist/myfir.v
+vlog -work ./work ../innovus/myfir_post_route.v
 vlog -work ./work ../tb/tb_fir.v
 vsim -c -do swa.tcl
 

@@ -1,0 +1,3 @@
+    Hinst Name           Module Name          Inst Count           Total Area
+--------------------------------------------------------------------------
+myfir_unfolded_pipelined                           11280            23426.620
