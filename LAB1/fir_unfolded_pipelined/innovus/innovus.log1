@@ -7875,3 +7875,15 @@ mem(process/total/peak)=1853.90MB/3618.61MB/1853.91MB)
 
 
 Output file is .//report_power_from_innovus.txt.
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Sun Nov 20 19:43:26 2022
+  Total CPU time:     0:34:51
+  Total real time:    1:51:02
+  Peak memory (main): 1853.91MB
+
+
+*** Memory Usage v#2 (Current mem = 2344.438M, initial mem = 272.285M) ***
+*** Message Summary: 32 warning(s), 2 error(s)
+
+--- Ending "Innovus" (totcpu=0:34:24, real=1:51:00, mem=2344.4M) ---

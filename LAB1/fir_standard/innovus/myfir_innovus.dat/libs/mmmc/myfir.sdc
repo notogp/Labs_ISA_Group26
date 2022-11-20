@@ -1,1 +1,0 @@
-/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/project/netlist/myfir.sdc
