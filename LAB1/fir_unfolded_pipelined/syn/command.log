@@ -8052,3 +8052,4 @@ source -echo -verbose /home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/fir_unfol
 #@ report_power > report_power_sw_act_unfolded_pipelined_innovus.txt
 #@ # -- End source /home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB1/fir_unfolded_pipelined/syn/pc_syn.tcl
 
+quit
