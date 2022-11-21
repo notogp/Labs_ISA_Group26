@@ -1,6 +1,6 @@
 source /eda/scripts/init_questa_core_prime
 
-# compile everything
+# compile everythings
 vlib work
 
 # vhdl sources
