@@ -59,7 +59,7 @@ module fpnew_fma #(
   localparam int unsigned MAN_BITS = fpnew_pkg::man_bits(FpFormat);
   localparam int unsigned BIAS     = fpnew_pkg::bias(FpFormat);
   // Precision bits 'p' include the implicit bit
-  localparam int unsigned PRECISION_BITS = MAN_BITS + 1;
+  localparam int unsigned PRECISION_BITS = MAN_BITS + 1; //MAN_BITS = 23
   // The lower 2p+3 bits of the internal FMA result will be needed for leading-zero detection
   localparam int unsigned LOWER_SUM_WIDTH  = 2 * PRECISION_BITS + 3;
   localparam int unsigned LZC_RESULT_WIDTH = $clog2(LOWER_SUM_WIDTH);

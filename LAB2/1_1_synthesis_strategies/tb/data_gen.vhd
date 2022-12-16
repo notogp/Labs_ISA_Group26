@@ -19,14 +19,19 @@ architecture beh of data_gen is
 
   constant tco : time := 1 ns;
 
-  type tval_t is array (0 to 5) of std_logic_vector(31 downto 0);
+  type tval_t is array (0 to 9) of std_logic_vector(31 downto 0);
   constant ctvalA : tval_t := (
     ('0' & conv_std_logic_vector(127+3, 8) & conv_std_logic_vector(7, 3) & conv_std_logic_vector(0, 23-3)),  --15
     ('0' & conv_std_logic_vector(127+7, 8) & conv_std_logic_vector(19, 5) & conv_std_logic_vector(0, 23-5)),  --204
     ('0' & conv_std_logic_vector(127+10, 8) & conv_std_logic_vector(0, 23)),  --1024
     ('1' & conv_std_logic_vector(127+3, 8) & conv_std_logic_vector(7, 3) & conv_std_logic_vector(0, 23-3)),  -- -15
     ('1' & conv_std_logic_vector(127+7, 8) & conv_std_logic_vector(19, 5) & conv_std_logic_vector(0, 23-5)),  -- -204
-    ('1' & conv_std_logic_vector(127+10, 8) & conv_std_logic_vector(0, 23))   -- -1024
+    ('1' & conv_std_logic_vector(127+10, 8) & conv_std_logic_vector(0, 23)),   -- -1024
+    ('0' & conv_std_logic_vector(127+3, 8) & conv_std_logic_vector(7, 3) & conv_std_logic_vector(0, 23-3)),  --15
+    ('0' & conv_std_logic_vector(127+7, 8) & conv_std_logic_vector(19, 5) & conv_std_logic_vector(0, 23-5)),  --204
+    ('0' & conv_std_logic_vector(127+10, 8) & conv_std_logic_vector(0, 23)),  --1024
+    ('1' & conv_std_logic_vector(127+3, 8) & conv_std_logic_vector(7, 3) & conv_std_logic_vector(0, 23-3))  -- -15
+    
     );  
 
   constant ctvalB : tval_t := (
@@ -35,7 +40,11 @@ architecture beh of data_gen is
     ('1' & conv_std_logic_vector(127+3, 8) & conv_std_logic_vector(7, 3) & conv_std_logic_vector(0, 23-3)),  -- -15
     ('1' & conv_std_logic_vector(127+7, 8) & conv_std_logic_vector(19, 5) & conv_std_logic_vector(0, 23-5)),  -- -204
     ('1' & conv_std_logic_vector(127+10, 8) & conv_std_logic_vector(0, 23)),   -- -1024
-    ('0' & conv_std_logic_vector(127+3, 8) & conv_std_logic_vector(7, 3) & conv_std_logic_vector(0, 23-3))   --15    
+    ('0' & conv_std_logic_vector(127+3, 8) & conv_std_logic_vector(7, 3) & conv_std_logic_vector(0, 23-3)),   --15
+    ('0' & conv_std_logic_vector(127+7, 8) & conv_std_logic_vector(19, 5) & conv_std_logic_vector(0, 23-5)),  --204
+    ('0' & conv_std_logic_vector(127+10, 8) & conv_std_logic_vector(0, 23)),  --1024
+    ('1' & conv_std_logic_vector(127+3, 8) & conv_std_logic_vector(7, 3) & conv_std_logic_vector(0, 23-3)),  -- -15
+    ('1' & conv_std_logic_vector(127+7, 8) & conv_std_logic_vector(19, 5) & conv_std_logic_vector(0, 23-5))  -- -204    
     );  
   
   signal cnt : integer := 0;
@@ -55,7 +64,7 @@ begin  -- architecture beh
       VOUT <= '0';
       sEnd_sim <= '0';
     elsif CLK'event and CLK = '1' then  -- rising clock edge
-      if (cnt < 6) then
+      if (cnt < 10) then
         cnt <= cnt + 1 after tco;
         D0 <= ctvalA(cnt) after tco;
         D1 <= ctvalB(cnt) after tco;
