@@ -1,0 +1,195 @@
+m255
+K4
+z2
+!s11f vlog 2020.4 2020.10, Oct 13 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/isa26_2022_2023/Desktop/ISA_labs_noto/LAB2/1_2_R8-MBE_multiplier_implementation/src/r8mbe/sim
+T_opt
+!s110 1671299013
+Vh?jJS3a_z@n8<Uz5M:@0B3
+04 8 4 work r8mbe_tb fast 0
+=1-52540097797c-639dffc4-68eab-7b8
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2020.4;71
+vbe
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1671298994
+!i10b 1
+!s100 Y0i=HBL^=VYYY=Ez?n;W70
+Z4 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IaU`DgQ`jD_;1T4iNQ75JT1
+S1
+R0
+w1671298898
+8../src/be.sv
+F../src/be.sv
+!i122 1
+L0 1 43
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2020.4;71
+r1
+!s85 0
+31
+Z7 !s108 1671298994.000000
+!s107 ../src/be.sv|
+!s90 ../src/be.sv|
+!i113 0
+Z8 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vbeu
+R2
+R3
+!i10b 1
+!s100 Z=]i9AEA5k9@^cC<c5D7`2
+R4
+IWnTFIVjcEICeR4HIEY^N^0
+S1
+R0
+w1671298454
+8../src/beu.sv
+F../src/beu.sv
+!i122 2
+L0 1 77
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 ../src/beu.sv|
+!s90 ../src/beu.sv|
+!i113 0
+R8
+R1
+vbs
+R2
+Z9 !s110 1671298995
+!i10b 1
+!s100 PI1_CUBW9Ye]P<ojTGkF33
+R4
+I9]lM[E2^4gg_bYMJJcOZS0
+S1
+R0
+w1671298760
+8../src/bs.sv
+F../src/bs.sv
+!i122 3
+L0 1 39
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 ../src/bs.sv|
+!s90 ../src/bs.sv|
+!i113 0
+R8
+R1
+vbsu
+R2
+R9
+!i10b 1
+!s100 cYC6oECPal[=h<0W7`i6m2
+R4
+IO18iW9h5TAl=R7fZcAk`M2
+S1
+R0
+w1671298794
+8../src/bsu.sv
+F../src/bsu.sv
+!i122 4
+L0 1 104
+R5
+R6
+r1
+!s85 0
+31
+Z10 !s108 1671298995.000000
+!s107 ../src/bsu.sv|
+!s90 ../src/bsu.sv|
+!i113 0
+R8
+R1
+vppg
+R2
+R3
+!i10b 1
+!s100 Gi64_Q0;iV0AaTjg`T7fQ1
+R4
+IjPNZai32jT90G8^nRC1Ej2
+S1
+R0
+w1671232921
+8../src/ppg.sv
+F../src/ppg.sv
+!i122 0
+L0 1 16
+R5
+R6
+r1
+!s85 0
+31
+!s108 1671298993.000000
+!s107 ../src/ppg.sv|
+!s90 ../src/ppg.sv|
+!i113 0
+R8
+R1
+vr8mbe_tb
+R2
+Z11 !s110 1671298996
+!i10b 1
+!s100 S]kE8UFChn7Bf>dTHiPMH0
+R4
+IZ<Bc@hC4FHjfbkDb[R9>?1
+S1
+R0
+w1671298983
+8../tb/r8mbe_tb.sv
+F../tb/r8mbe_tb.sv
+!i122 6
+L0 1 47
+R5
+R6
+r1
+!s85 0
+31
+!s108 1671298996.000000
+!s107 ../tb/r8mbe_tb.sv|
+!s90 ../tb/r8mbe_tb.sv|
+!i113 0
+R8
+R1
+vr8mbe_top
+R2
+R11
+!i10b 1
+!s100 `;ia1nh:H_o:<447VOICm0
+R4
+I8nFV;8Ue2jMK0fDSaI@:^2
+S1
+R0
+w1671298808
+8../src/r8mbe_top.sv
+F../src/r8mbe_top.sv
+!i122 5
+L0 1 109
+R5
+R6
+r1
+!s85 0
+31
+R10
+!s107 ../src/r8mbe_top.sv|
+!s90 ../src/r8mbe_top.sv|
+!i113 0
+R8
+R1
